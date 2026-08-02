@@ -1,0 +1,60 @@
+---
+import { SITE_TITLE, SITE_URL, CONTACT_PHONE, BUSINESS_ADDRESS, SERVICE_AREAS } from '../data/consts';
+
+export interface Props {
+    title: string;
+    description: string;
+    image?: string;
+}
+
+const {
+    title,
+    description,
+    image = "/social-preview.jpg"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || SITE_URL);
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="theme-color" content="#020617" />
+<link rel="canonical" href={canonicalURL} />
+
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": SITE_TITLE,
+  "image": `${SITE_URL}/social-preview.jpg`,
+  "@id": SITE_URL,
+  "url": SITE_URL,
+  "telephone": CONTACT_PHONE.replace(/\s+/g, ''),
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": BUSINESS_ADDRESS.street,
+    "addressLocality": BUSINESS_ADDRESS.city,
+    "postalCode": BUSINESS_ADDRESS.postalCode,
+    "addressCountry": BUSINESS_ADDRESS.country
+  },
+  "areaServed": SERVICE_AREAS,
+  "priceRange": "€€",
+  "description": description
+})} />

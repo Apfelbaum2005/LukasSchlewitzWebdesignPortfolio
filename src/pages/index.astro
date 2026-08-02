@@ -1,17 +1,126 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Start-Hero.astro';
+import CardsGrid from '../components/CardsGrid.astro';
+import Card from '../components/Card.astro';
+import AboutWork from '../components/Start-AboutWork.astro';
+import CtaSection from '../components/Start-CtaSection.astro';
+import { SITE_TITLE } from '../data/consts';
+import {
+    homeHero,
+    homeProblemsIntro,
+    problemCards,
+    homeSolutionsIntro,
+    solutionCards,
+    homeAboutWork,
+    homeCta
+} from '../data/content';
+import { Phone, MapPinOff, Smartphone, Monitor, CalendarCheck, MapPin } from 'lucide-astro';
 
+// Maps the iconName string stored in content.ts to the matching icon component
+const iconMap = {
+    Phone, MapPinOff, Smartphone, Monitor, CalendarCheck, MapPin
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+    title={SITE_TITLE}
+    description={homeHero.subtitle}
+>
+    <main>
+        <Hero
+            headlineStart={homeHero.headlineStart}
+            headlineHighlight={homeHero.headlineHighlight}
+            headlineEnd={homeHero.headlineEnd}
+            subtitle={homeHero.subtitle}
+            buttonText={homeHero.buttonText}
+            buttonLink={homeHero.buttonLink}
+        />
+
+        <CardsGrid
+            titleTextStart={homeProblemsIntro.titleTextStart}
+            titleTextHighlight={homeProblemsIntro.titleTextHighlight}
+            titleTextEnd={homeProblemsIntro.titleTextEnd}
+            wrap={true}
+        >
+            {problemCards.map((card, index) => {
+                const IconComponent = iconMap[card.iconName as keyof typeof iconMap];
+                return (
+                    <Card title={card.title} delayIndex={index}>
+                        {IconComponent && <IconComponent slot="icon" />}
+                        {card.description}
+                    </Card>
+                )
+            })}
+        </CardsGrid>
+
+        <section class="solutions-wrapper relative overflow-hidden bg-black/20">
+            <div class="bg-glow-solutions"></div>
+
+            <CardsGrid
+                titleTextStart={homeSolutionsIntro.titleTextStart}
+                titleTextHighlight={homeSolutionsIntro.titleTextHighlight}
+                titleTextEnd={homeSolutionsIntro.titleTextEnd}
+                wrap={true}
+            >
+                {solutionCards.map((card, index) => {
+                    const IconComponent = iconMap[card.iconName as keyof typeof iconMap];
+                    return (
+                        <Card title={card.title} delayIndex={index + 1} isSolution={true}>
+                            {IconComponent && <IconComponent slot="icon" />}
+                            {card.description}
+                        </Card>
+                    )
+                })}
+            </CardsGrid>
+
+            <div class="button-container reveal reveal-delay-3">
+                <a href={homeSolutionsIntro.buttonLeistungenLink} class="secondary-button">{homeSolutionsIntro.buttonLeistungenText}</a>
+            </div>
+        </section>
+
+        <AboutWork
+            aboutTagline={homeAboutWork.aboutTagline}
+            aboutHeadline={homeAboutWork.aboutHeadline}
+            aboutText1={homeAboutWork.aboutText1}
+            aboutText2={homeAboutWork.aboutText2}
+            workTagline={homeAboutWork.workTagline}
+            workHeadline={homeAboutWork.workHeadline}
+            demoProject={homeAboutWork.demoProject}
+        />
+
+        <CtaSection
+            headline={homeCta.headline}
+            description={homeCta.description}
+            buttonText={homeCta.buttonText}
+            buttonLink={homeCta.buttonLink}
+        />
+    </main>
+</BaseLayout>
+
+<style>
+    .solutions-wrapper {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.2);
+        padding-bottom: 6rem; /* leaves room for the button below the grid */
+    }
+
+    .bg-glow-solutions {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        height: 400px;
+        background: radial-gradient(ellipse, var(--accent-subtle), rgba(var(--bg-main-rgb), 0) 70%);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .button-container {
+        text-align: center;
+        margin-top: 2rem;
+        position: relative;
+        z-index: 10;
+    }
+</style>

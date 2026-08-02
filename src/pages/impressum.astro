@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_TITLE, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_ADDRESS } from '../data/consts';
+import { impressumContent } from '../data/content';
+
+const contactText = `Telefon: <a href="tel:${CONTACT_PHONE.replace(/\s+/g, '')}">${CONTACT_PHONE}</a><br />E-Mail: <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>`;
+---
+
+<BaseLayout title={`${impressumContent.pageTitle} | ${SITE_TITLE}`}>
+  <main class="legal-page">
+    <div class="bg-glow"></div>
+
+    <div class="container container--narrow glass-panel">
+      <h1>{impressumContent.pageTitle}</h1>
+
+      <section class="legal-content">
+        <h2>{impressumContent.addressTitle}</h2>
+        <p set:html={CONTACT_ADDRESS}></p>
+
+        <h2>{impressumContent.contactTitle}</h2>
+        <p set:html={contactText}></p>
+
+        <h2>{impressumContent.responsibleTitle}</h2>
+        <p set:html={CONTACT_ADDRESS}></p>
+      </section>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .legal-page {
+    padding: 10rem 0 6rem;
+    position: relative;
+    min-height: 75vh;
+    z-index: 1;
+    overflow: hidden; 
+  }
+  
+  .legal-content :global(a) {
+	color: var(--text-muted);
+	text-decoration: none;
+	transition: color 0.3s ease;
+	font-size: 0.95rem;
+  }
+
+  .legal-content :global(a:hover) {
+    color: var(--accent-main);
+  }
+
+  .bg-glow {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, var(--accent-subtle) 0%, rgba(var(--bg-main-rgb), 0) 70%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+  }
+
+  p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: var(--accent-main);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--accent-light);
+  }
+</style>

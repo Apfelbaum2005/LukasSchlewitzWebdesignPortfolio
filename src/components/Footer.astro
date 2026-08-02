@@ -1,0 +1,94 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION, CONTACT_EMAIL, CONTACT_PHONE } from "../data/consts";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+
+            <div class="footer-col">
+                <h3>{SITE_TITLE}</h3>
+                <p>{SITE_DESCRIPTION}</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Kontakt</h3>
+                <ul class="footer-links">
+                    <li><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
+          <li><a href={`tel:${CONTACT_PHONE.replace(/\s+/g, '')}`}>{CONTACT_PHONE}</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Rechtliches</h3>
+                <ul class="footer-links">
+                    <li><a href="/impressum">Impressum</a></li>
+                    <li><a href="/datenschutz">Datenschutz</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; {currentYear} Lukas Schlewitz. Alle Rechte vorbehalten.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .site-footer {
+        background-color: rgba(var(--bg-surface-rgb), 0.6);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 4rem 0 2rem;
+        margin-top: 4rem;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+        margin-bottom: 1.25rem;
+        color: var(--text-main);
+        font-weight: 600;
+    }
+
+    p {
+        color: var(--text-muted);
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+        color: var(--accent-main);
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 2rem;
+        text-align: center;
+        font-size: 0.875rem;
+        color: var(--text-subtle);
+    }
+</style>

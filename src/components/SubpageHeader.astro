@@ -1,0 +1,65 @@
+---
+export interface Props {
+    titleStart: string;
+    titleHighlight: string;
+    titleEnd?: string;
+    subtitle: string;
+}
+
+const { titleStart, titleHighlight, titleEnd = "", subtitle } = Astro.props;
+---
+
+<section class="subpage-header">
+    <div class="container container--narrow reveal">
+        <h1>{titleStart} <span class="text-gradient">{titleHighlight}</span> {titleEnd}</h1>
+        <p class="subtitle">{subtitle}</p>
+    </div>
+</section>
+
+<style>
+    .subpage-header {
+        position: relative;
+        padding: 8rem 0 3rem; /* extra top space clears the fixed header */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 35vh;
+        overflow: hidden;
+    }
+
+    .container {
+        position: relative;
+        z-index: 10;
+    }
+
+    h1 {
+        font-size: 3rem; /* smaller than the 4rem homepage hero heading */
+        font-weight: 800;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+        font-size: 1.15rem;
+        color: var(--text-muted);
+        max-width: 620px;
+        margin-inline: auto;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2rem;
+        }
+        .subtitle {
+            font-size: 1rem;
+        }
+        .subpage-header {
+            padding-top: 7rem;
+            min-height: 25vh;
+        }
+    }
+</style>

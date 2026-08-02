@@ -1,0 +1,32 @@
+---
+import '../styles/global.css';
+
+import { SITE_DESCRIPTION } from '../data/consts';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+
+const { 
+  title = "Lukas Schlewitz Webdesign", 
+  description = SITE_DESCRIPTION 
+} = Astro.props;
+---
+
+<html lang="de">
+    <head>
+        <SEO title={title} description={description} />
+        
+        <style>
+            html { scroll-behavior: smooth; }
+        </style>
+    </head>
+    <body>
+        <Header />
+        
+        <slot/>
+
+        <Footer />
+
+        <script src="../scripts/reveal.ts"></script>
+    </body>
+</html>

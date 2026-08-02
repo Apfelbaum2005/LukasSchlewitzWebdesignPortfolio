@@ -1,0 +1,62 @@
+---
+export interface Props {
+    title: string;
+    delayIndex?: number;
+    isSolution?: boolean;
+}
+
+const { title, delayIndex = 0, isSolution = false } = Astro.props;
+---
+
+<div 
+    class:list={['glass-panel', 'card', 'reveal', isSolution ? 'solution-style' : '']}
+    style={`transition-delay: ${delayIndex * 0.1}s;`}
+>
+    <div class="icon-wrapper">
+        <slot name="icon" />
+    </div>
+    
+    <h3>{title}</h3>
+    
+    <p><slot /></p>
+</div>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card.solution-style {
+    border-top: 3px solid var(--accent-main);
+  }
+  
+  .card.solution-style:hover {
+    box-shadow: 0 10px 30px var(--accent-subtle);
+  }
+
+  .icon-wrapper {
+    color: var(--accent-main);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--accent-subtle);
+    border-radius: 12px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+  }
+
+  p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+</style>

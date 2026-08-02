@@ -1,0 +1,144 @@
+---
+import { SITE_TITLE } from '../data/consts'
+---
+
+<header class="site-header">
+    <div class="container">
+        <a href="/" class="logo">
+            <span class="text-gradient">Lukas Schlewitz</span> Webdesign
+        </a>
+
+        <nav class="main-nav" id="main-nav">
+            <ul class="nav-links">
+                <li><a href="/">Start</a></li>
+                <li><a href="/ueber-mich">Über mich</a></li>
+                <li><a href="/leistungen">Leistungen</a></li>
+                <li><a href="/kontakt" class="glow-button nav-cta">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <button class="mobile-menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+    </div>
+</header>
+
+<script>
+    const toggleButton = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('#main-nav');
+
+    toggleButton?.addEventListener('click', () => {
+        const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+        toggleButton.setAttribute('aria-expanded', String(!isExpanded));
+        nav?.classList.toggle('is-open');
+    });
+</script>
+
+<style>
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(var(--bg-main-rgb), 0.7);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--glass-border);
+        transition: all 0.3s ease;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: 1rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--text-main);
+        text-decoration: none;
+        letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links a:not(.glow-button) {
+        color: var(--text-main);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:not(.glow-button):hover {
+        color: var(--accent-main);
+    }
+
+    .nav-cta {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text-main);
+        cursor: pointer;
+        padding: 0.5rem;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-menu-toggle:hover {
+        color: var(--accent-main);
+    }
+
+    @media (max-width: 768px) {
+        .mobile-menu-toggle {
+            display: block;
+        }
+
+        .main-nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(var(--bg-surface-rgb), 0.98);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--glass-border);
+
+            transform: translate(-10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .main-nav.is-open {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-links {
+            flex-direction: column;
+            padding: 2rem;
+            gap: 1.5rem;
+        }
+        .nav-cta {
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>

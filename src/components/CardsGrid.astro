@@ -1,0 +1,195 @@
+---
+import { ChevronLeft, ChevronRight } from 'lucide-astro';
+
+export interface Props {
+    titleTextStart?: string;
+    titleTextHighlight?: string;
+    titleTextEnd?: string;
+    minCardWidth?: string;
+    wrap?: boolean;
+    scrollType?: 'scrollbar' | 'arrows';
+}
+
+const {
+    titleTextStart,
+    titleTextHighlight,
+    titleTextEnd,
+    minCardWidth = "280px",
+    wrap = true,
+    scrollType = "scrollbar"
+} = Astro.props;
+
+const isScrollMode = !wrap;
+const useArrows = isScrollMode && scrollType === 'arrows';
+---
+
+<div class:list={["problems-section", { "has-arrows": useArrows }]}>
+    <div class="container container--medium">
+        {titleTextStart && <h2>{titleTextStart} <span class="text-accent">{titleTextHighlight}</span> {titleTextEnd}</h2>}
+
+        <div class="grid-wrapper">
+            {useArrows && (
+                <button class="scroll-btn prev" aria-label="Vorherige Karten" disabled>
+                    <ChevronLeft />
+                </button>
+            )}
+
+            <div 
+                class:list={[
+                    "cards-grid",
+                    {
+                        "no-wrap": !wrap,
+                        "hide-scrollbar": useArrows
+                    }
+                ]}
+            >
+                <slot />
+            </div>
+
+            {useArrows && (
+                <button class="scroll-btn next" aria-label="Nächste Karten">
+                    <ChevronRight />
+                </button>
+            )}
+        </div>
+    </div>
+</div>
+
+<script>
+    const sections = document.querySelectorAll('.problems-section.has-arrows');
+    
+    sections.forEach(section => {
+        const grid = section.querySelector('.cards-grid');
+        const prevBtn = section.querySelector('.scroll-btn.prev') as HTMLButtonElement;
+        const nextBtn = section.querySelector('.scroll-btn.next') as HTMLButtonElement;
+        
+        if (grid && prevBtn && nextBtn) {
+            const scrollAmount = 340; 
+            
+            prevBtn.addEventListener('click', () => {
+                grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+
+            const updateButtonStates = () => {
+                const isAtStart = grid.scrollLeft <= 5;
+                const isAtEnd = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 5;
+                
+                prevBtn.disabled = isAtStart;
+                nextBtn.disabled = isAtEnd;
+            };
+
+            grid.addEventListener('scroll', updateButtonStates);
+            window.addEventListener('resize', updateButtonStates);
+            setTimeout(updateButtonStates, 100);
+        }
+    });
+</script>
+
+<style define:vars={{ minCardWidth }}>
+  .problems-section {
+    padding: 6rem 0;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    margin-bottom: 4rem;
+    font-weight: 700;
+  }
+
+  .text-accent {
+    color: var(--text-main);
+  }
+
+  .grid-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* default: grid that wraps onto new lines */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--minCardWidth)), 1fr));
+    gap: 2.5rem;
+    width: 100%;
+  }
+
+  /* wrap={false}: horizontally scrollable row instead of wrapping */
+  .cards-grid.no-wrap {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 2.5rem;
+    padding: 1rem 0.5rem; 
+  }
+
+  .cards-grid.no-wrap > :global(*) {
+    flex: 0 0 var(--minCardWidth);
+    min-width: var(--minCardWidth);
+  }
+
+  /* hide native scrollbar when arrow buttons are used instead */
+  .cards-grid.hide-scrollbar {
+    scrollbar-width: none;
+  }
+  .cards-grid.hide-scrollbar::-webkit-scrollbar {
+    display: none; 
+  }
+
+  /* prev/next scroll arrow buttons */
+  .scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent-main, #000);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .scroll-btn:hover:not(:disabled) {
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .scroll-btn:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+    transform: translateY(-50%) scale(1);
+  }
+
+  .scroll-btn.prev { left: -1.5rem; }
+  .scroll-btn.next { right: -1.5rem; }
+
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 3rem;
+    }
+    .scroll-btn {
+      display: none;
+    }
+    .cards-grid.hide-scrollbar {
+      scrollbar-width: auto;
+    }
+    .cards-grid.hide-scrollbar::-webkit-scrollbar {
+      display: block;
+    }
+  }
+</style>
