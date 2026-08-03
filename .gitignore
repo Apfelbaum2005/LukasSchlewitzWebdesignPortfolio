@@ -17,6 +17,9 @@ pnpm-debug.log*
 .env
 .env.production
 
+# real mail credentials (copy public/mail-config.example.php instead, then upload directly to the server)
+public/mail-config.php
+
 # macOS-specific files
 .DS_Store
 

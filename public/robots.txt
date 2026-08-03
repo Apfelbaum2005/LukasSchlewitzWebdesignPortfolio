@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+Sitemap: https://webdesign.lukasschlewitz.de/sitemap-index.xml
