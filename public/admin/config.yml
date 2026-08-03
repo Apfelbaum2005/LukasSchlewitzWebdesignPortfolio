@@ -1,0 +1,316 @@
+backend:
+  name: github
+  # TODO: replace with your actual "github-username/repository-name"
+  repo: OWNER/REPO
+  branch: main
+  base_url: https://webdesign.lukasschlewitz.de
+  auth_endpoint: oauth
+
+# Lets you run the CMS locally against your local files (no GitHub login needed)
+# by running `npx decap-server` alongside `npm run dev`. Has no effect in production.
+local_backend: true
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+locale: "de"
+
+collections:
+  - name: settings
+    label: "Website-Einstellungen"
+    files:
+      - name: settings
+        label: "Allgemeine Einstellungen"
+        file: "src/content/settings.json"
+        fields:
+          - { label: "Firmenname", name: siteTitle, widget: string }
+          - { label: "Kurzbeschreibung (für Google & Social Media)", name: siteDescription, widget: text }
+          - { label: "Kontakt-E-Mail", name: contactEmail, widget: string }
+          - { label: "Telefonnummer", name: contactPhone, widget: string }
+          - label: "Adresse"
+            name: businessAddress
+            widget: object
+            fields:
+              - { label: "Name", name: name, widget: string }
+              - { label: "Straße + Hausnummer", name: street, widget: string }
+              - { label: "Postleitzahl", name: postalCode, widget: string }
+              - { label: "Stadt", name: city, widget: string }
+              - { label: "Land (2 Buchstaben, z. B. DE)", name: country, widget: string }
+          - label: "Einzugsgebiet (Orte, die auf der Website genannt werden)"
+            name: serviceAreas
+            widget: list
+            label_singular: "Ort"
+
+  - name: home
+    label: "Startseite"
+    files:
+      - name: home
+        label: "Startseite"
+        file: "src/content/home.json"
+        fields:
+          - label: "Hero-Bereich (ganz oben)"
+            name: hero
+            widget: object
+            fields:
+              - { label: "Überschrift (Teil 1)", name: headlineStart, widget: string }
+              - { label: "Überschrift (farbig hervorgehoben)", name: headlineHighlight, widget: string }
+              - { label: "Überschrift (Teil 2)", name: headlineEnd, widget: string, required: false }
+              - { label: "Untertitel", name: subtitle, widget: text }
+              - { label: "Button-Text", name: buttonText, widget: string }
+              - { label: "Button-Ziel (Link)", name: buttonLink, widget: string }
+          - label: "Problem-Bereich: Überschrift"
+            name: problemsIntro
+            widget: object
+            fields:
+              - { label: "Text (Teil 1)", name: titleTextStart, widget: string }
+              - { label: "Hervorgehoben", name: titleTextHighlight, widget: string }
+              - { label: "Text (Teil 2)", name: titleTextEnd, widget: string }
+          - label: "Problem-Karten"
+            name: problemCards
+            widget: list
+            summary: "{{title}}"
+            fields:
+              - { label: "Titel", name: title, widget: string }
+              - { label: "Beschreibung", name: description, widget: text }
+              - { label: "Icon-Name (siehe lucide.dev)", name: iconName, widget: string, hint: "Muss zu einem der im Code hinterlegten Icons passen (Phone, MapPinOff, Smartphone, ...)." }
+          - label: "Lösungen-Bereich: Überschrift"
+            name: solutionsIntro
+            widget: object
+            fields:
+              - { label: "Text (Teil 1)", name: titleTextStart, widget: string }
+              - { label: "Hervorgehoben", name: titleTextHighlight, widget: string }
+              - { label: "Text (Teil 2)", name: titleTextEnd, widget: string }
+              - { label: "Button-Text (zu Leistungen)", name: buttonLeistungenText, widget: string }
+              - { label: "Button-Ziel", name: buttonLeistungenLink, widget: string }
+          - label: "Lösungen-Karten"
+            name: solutionCards
+            widget: list
+            summary: "{{title}}"
+            fields:
+              - { label: "Titel", name: title, widget: string }
+              - { label: "Beschreibung", name: description, widget: text }
+              - { label: "Icon-Name (siehe lucide.dev)", name: iconName, widget: string, hint: "Muss zu einem der im Code hinterlegten Icons passen (Monitor, CalendarCheck, MapPin, ...)." }
+          - label: "Über-mich-Vorschau"
+            name: aboutWork
+            widget: object
+            fields:
+              - { label: "Kicker (kleiner Text über der Überschrift)", name: aboutTagline, widget: string }
+              - { label: "Überschrift", name: aboutHeadline, widget: string }
+              - { label: "Text 1", name: aboutText1, widget: text }
+              - { label: "Text 2", name: aboutText2, widget: text }
+              - { label: "Kicker (Arbeitsproben)", name: workTagline, widget: string }
+              - { label: "Überschrift (Arbeitsproben)", name: workHeadline, widget: string }
+              - label: "Demo-Projekt"
+                name: demoProject
+                widget: object
+                fields:
+                  - { label: "Titel", name: title, widget: string }
+                  - { label: "Beschreibung", name: description, widget: text }
+                  - { label: "Bild-Alt-Text", name: imageAlt, widget: string }
+                  - { label: "Button-Text", name: buttonText, widget: string }
+                  - { label: "Link", name: link, widget: string }
+                  - { label: "Tags", name: tags, widget: list, label_singular: "Tag" }
+          - label: "Abschluss-Aufruf (CTA)"
+            name: cta
+            widget: object
+            fields:
+              - { label: "Überschrift", name: headline, widget: string }
+              - { label: "Beschreibung", name: description, widget: text }
+              - { label: "Button-Text", name: buttonText, widget: string }
+              - { label: "Button-Ziel", name: buttonLink, widget: string }
+
+  - name: leistungen
+    label: "Leistungen-Seite"
+    files:
+      - name: leistungen
+        label: "Leistungen"
+        file: "src/content/leistungen.json"
+        fields:
+          - label: "Kopfbereich"
+            name: header
+            widget: object
+            fields:
+              - { label: "Text (Teil 1)", name: titleStart, widget: string }
+              - { label: "Hervorgehoben", name: titleHighlight, widget: string }
+              - { label: "Untertitel", name: subtitle, widget: text }
+          - label: "Kernkompetenzen: Überschrift"
+            name: servicesIntro
+            widget: object
+            fields:
+              - { label: "Text (Teil 1)", name: titleTextStart, widget: string }
+              - { label: "Hervorgehoben", name: titleTextHighlight, widget: string }
+              - { label: "Text (Teil 2)", name: titleTextEnd, widget: string }
+          - label: "Leistungs-Karten"
+            name: serviceCards
+            widget: list
+            summary: "{{title}}"
+            fields:
+              - { label: "Titel", name: title, widget: string }
+              - { label: "Beschreibung", name: description, widget: text }
+              - { label: "Icon-Name (siehe lucide.dev)", name: iconName, widget: string }
+          - { label: "Ablauf: Überschrift (Teil 1)", name: processTimelineHeading, widget: string }
+          - { label: "Ablauf: Überschrift (Teil 2, hervorgehoben)", name: processTimelineHighlight, widget: string }
+          - label: "Ablauf-Schritte"
+            name: processTimeline
+            widget: list
+            summary: "{{fields.step}}. {{fields.title}}"
+            fields:
+              - { label: "Schritt-Nummer", name: step, widget: number, value_type: int }
+              - { label: "Titel", name: title, widget: string }
+              - { label: "Beschreibung", name: description, widget: text }
+          - { label: "Preise: Überschrift (Teil 1)", name: pricingHeading, widget: string }
+          - { label: "Preise: Überschrift (Teil 2, hervorgehoben)", name: pricingHighlight, widget: string }
+          - label: "Preis-Pakete"
+            name: pricingPackages
+            widget: list
+            summary: "{{fields.name}} – {{fields.price}}"
+            fields:
+              - { label: "Paketname", name: name, widget: string }
+              - { label: "Preis (z. B. 990€)", name: price, widget: string }
+              - { label: "Kurzbeschreibung", name: description, widget: string }
+              - { label: "Leistungsmerkmale", name: features, widget: list, label_singular: "Merkmal" }
+              - { label: "Button-Text", name: ctaText, widget: string }
+              - { label: "Button-Ziel", name: ctaLink, widget: string }
+              - { label: "Hervorgehoben darstellen? (mittleres, größeres Paket)", name: highlighted, widget: boolean, required: false, default: false }
+              - { label: "Badge-Text (z. B. Empfehlung)", name: badge, widget: string, required: false }
+          - label: "Hinweis unter den Preispaketen"
+            name: disclaimer
+            widget: object
+            fields:
+              - { label: "Fett hervorgehobenes Lead-in (z. B. \"Gut zu wissen:\")", name: label, widget: string }
+              - { label: "Text", name: text, widget: text }
+          - label: "Abschluss-Aufruf (CTA)"
+            name: cta
+            widget: object
+            fields:
+              - { label: "Überschrift", name: headline, widget: string }
+              - { label: "Beschreibung", name: description, widget: text }
+              - { label: "Button-Text", name: buttonText, widget: string }
+              - { label: "Button-Ziel", name: buttonLink, widget: string }
+
+  - name: ueber_mich
+    label: "Über-mich-Seite"
+    files:
+      - name: ueber_mich
+        label: "Über mich"
+        file: "src/content/ueber-mich.json"
+        fields:
+          - label: "Kopfbereich"
+            name: header
+            widget: object
+            fields:
+              - { label: "Text (Teil 1)", name: titleStart, widget: string }
+              - { label: "Hervorgehoben", name: titleHighlight, widget: string }
+              - { label: "Text (Teil 2)", name: titleEnd, widget: string, required: false }
+              - { label: "Untertitel", name: subtitle, widget: text }
+          - label: "Einleitungstexte"
+            name: introParagraphs
+            widget: list
+            label_singular: "Absatz"
+            field: { label: "Text", name: paragraph, widget: text }
+          - label: "Karte: \"Warum ich das mache\""
+            name: why
+            widget: object
+            fields:
+              - { label: "Überschrift", name: heading, widget: string }
+              - { label: "Text", name: text, widget: text }
+          - label: "Die drei Vorteile"
+            name: differentiators
+            widget: list
+            summary: "{{title}}"
+            fields:
+              - { label: "Titel", name: title, widget: string }
+              - { label: "Beschreibung", name: description, widget: text }
+              - { label: "Icon-Name (siehe lucide.dev)", name: iconName, widget: string }
+          - label: "Abschluss-Aufruf (CTA)"
+            name: cta
+            widget: object
+            fields:
+              - { label: "Überschrift", name: headline, widget: string }
+              - { label: "Beschreibung", name: description, widget: text }
+              - { label: "Button-Text", name: buttonText, widget: string }
+              - { label: "Button-Ziel", name: buttonLink, widget: string }
+
+  - name: kontakt
+    label: "Kontakt-Seite"
+    files:
+      - name: kontakt
+        label: "Kontakt"
+        file: "src/content/kontakt.json"
+        fields:
+          - label: "Kopfbereich"
+            name: header
+            widget: object
+            fields:
+              - { label: "Text (Teil 1)", name: titleStart, widget: string }
+              - { label: "Hervorgehoben", name: titleHighlight, widget: string }
+              - { label: "Text (Teil 2)", name: titleEnd, widget: string, required: false }
+              - { label: "Untertitel", name: subtitle, widget: text }
+          - label: "Formular-Texte"
+            name: form
+            widget: object
+            fields:
+              - { label: "Feld-Beschriftung: Name", name: nameLabel, widget: string }
+              - { label: "Feld-Beschriftung: E-Mail", name: emailLabel, widget: string }
+              - { label: "Feld-Beschriftung: Telefon", name: phoneLabel, widget: string }
+              - { label: "Feld-Beschriftung: Nachricht", name: messageLabel, widget: string }
+              - { label: "Button-Text", name: submitText, widget: string }
+              - { label: "Text während des Sendens", name: sendingText, widget: string }
+              - { label: "Erfolgsmeldung", name: successText, widget: text }
+              - { label: "Fehlermeldung (nutze {email} als Platzhalter für die Kontakt-E-Mail)", name: errorText, widget: text }
+          - label: "Terminbuchung-Hinweistext"
+            name: booking
+            widget: object
+            fields:
+              - { label: "Überschrift", name: heading, widget: string }
+              - { label: "Text", name: text, widget: text }
+
+  - name: impressum
+    label: "Impressum"
+    files:
+      - name: impressum
+        label: "Impressum"
+        file: "src/content/impressum.json"
+        fields:
+          - { label: "Seitentitel", name: pageTitle, widget: string }
+          - { label: "Überschrift Adressblock", name: addressTitle, widget: string }
+          - { label: "Überschrift Kontaktblock", name: contactTitle, widget: string }
+          - { label: "Überschrift Verantwortlichkeit", name: responsibleTitle, widget: string }
+
+  - name: datenschutz
+    label: "Datenschutzerklärung"
+    description: "Achtung: Dies ist ein rechtlich bindendes Dokument. Änderungen bitte im Zweifel von einer fachkundigen Person (z. B. Anwalt) prüfen lassen."
+    files:
+      - name: datenschutz
+        label: "Datenschutzerklärung"
+        file: "src/content/datenschutz.json"
+        fields:
+          - label: "Abschnitte"
+            name: sections
+            widget: list
+            summary: "{{fields.heading}}"
+            fields:
+              - { label: "Überschrift", name: heading, widget: string }
+              - label: "Unterabschnitte"
+                name: subsections
+                widget: list
+                summary: "{{fields.heading}}"
+                fields:
+                  - { label: "Überschrift (optional)", name: heading, widget: string, required: false }
+                  - label: "Inhalt"
+                    name: blocks
+                    widget: list
+                    types:
+                      - label: "Absatz"
+                        name: p
+                        widget: object
+                        fields:
+                          - label: "Text"
+                            name: text
+                            widget: text
+                            hint: 'HTML wie <a href="...">Link</a> oder <strong>fett</strong> ist erlaubt. Die Platzhalter {businessAddress} und {businessContact} werden automatisch durch die Angaben aus "Website-Einstellungen" ersetzt.'
+                      - label: "Aufzählungsliste"
+                        name: ul
+                        widget: object
+                        fields:
+                          - { label: "Punkte", name: items, widget: list, label_singular: "Punkt" }

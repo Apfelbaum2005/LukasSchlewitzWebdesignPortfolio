@@ -1,0 +1,22 @@
+{
+  "header": {
+    "titleStart": "Lassen Sie uns über Ihr",
+    "titleHighlight": "Projekt",
+    "titleEnd": "sprechen",
+    "subtitle": "Ob kurze Frage oder konkrete Anfrage – schreiben Sie mir einfach oder buchen Sie sich direkt einen Termin in meinem Kalender."
+  },
+  "form": {
+    "nameLabel": "Name",
+    "emailLabel": "Email*",
+    "phoneLabel": "Telefon",
+    "messageLabel": "Nachricht*",
+    "submitText": "Nachricht senden",
+    "sendingText": "Wird gesendet...",
+    "successText": "Danke für Ihre Nachricht! Ich melde mich schnellstmöglich bei Ihnen.",
+    "errorText": "Da ist leider etwas schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt an {email}."
+  },
+  "booking": {
+    "heading": "Lieber direkt sprechen?",
+    "text": "Buchen Sie sich einfach direkt einen Termin in meinem Kalender. Wir telefonieren ganz unverbindlich und klären Ihr Anliegen in 15 Minuten."
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "hero": {
+    "headlineStart": "Modernes Webdesign für lokale Unternehmen im",
+    "headlineHighlight": "Großraum Nürnberg",
+    "headlineEnd": "",
+    "subtitle": "Gewinnen Sie mehr Kunden durch einen professionellen Internetauftritt und intelligente Terminbuchungen. Ich nehme Ihnen die komplette Technik ab - unkompliziert, persönlich vor Ort und zum fairen Festpreis.",
+    "buttonText": "Jetzt kostenloses Erstgespräch vereinbaren",
+    "buttonLink": "#kontakt"
+  },
+  "problemsIntro": {
+    "titleTextStart": "Kennen Sie diese",
+    "titleTextHighlight": "Probleme",
+    "titleTextEnd": "in Ihrem Geschäftsalltag?"
+  },
+  "problemCards": [
+    {
+      "title": "Ständige Anrufe?",
+      "description": "Das Telefon klingelt ununterbrochen wegen Terminanfragen und reißt Sie aus der Arbeit. Es fehlt ein intelligentes Online-Buchungssystem, das Ihnen die Arbeit abnimmt.",
+      "iconName": "Phone"
+    },
+    {
+      "title": "Unsichtbar auf Google?",
+      "description": "Lokale Kunden suchen online nach Ihren Dienstleistungen, landen aber bei der Konkurrenz, weil Sie nicht gefunden werden. Es mangelt an regionaler Sichtbarkeit.",
+      "iconName": "MapPinOff"
+    },
+    {
+      "title": "Veraltetes Design?",
+      "description": "Ihre aktuelle Seite sieht auf Smartphones unschön aus. 70% der Kunden surfen mobil. Ein schlechtes Design kostet Vertrauen und macht die Seite unbrauchbar.",
+      "iconName": "Smartphone"
+    }
+  ],
+  "solutionsIntro": {
+    "titleTextStart": "Meine",
+    "titleTextHighlight": "Lösungen",
+    "titleTextEnd": "für Ihren digitalen Erfolg",
+    "buttonLeistungenText": "Alle Leistungen im Detail ansehen",
+    "buttonLeistungenLink": "leistungen"
+  },
+  "solutionCards": [
+    {
+      "title": "Modernes Webdesign",
+      "description": "Ich erstelle Ihnen eine blitzschnelle, optisch ansprechende Website, die auf jedem Smartphone perfekt aussieht und Ihre Besucher in Kunden verwandelt.",
+      "iconName": "Monitor"
+    },
+    {
+      "title": "24/7 Terminbuchung",
+      "description": "Sparen Sie sich das Telefon-Chaos! Ich integriere ein smartes Buchungstool, mit dem Ihre Kunden rund um die Uhr selbst freie Termine eintragen können.",
+      "iconName": "CalendarCheck"
+    },
+    {
+      "title": "Lokale Sichtbarkeit",
+      "description": "Was nützt die schönste Website, wenn sie niemand findet? Ich optimiere Ihre Seite so, dass Kunden aus der Region Sie bei Google ganz oben sehen.",
+      "iconName": "MapPin"
+    }
+  ],
+  "aboutWork": {
+    "aboutTagline": "Über mich",
+    "aboutHeadline": "Hallo, ich bin Lukas.",
+    "aboutText1": "Dank meiner Erfahrung durch vier Semester Informatikstudium sorge ich unter der Haube Ihrer neuen Website für sauberen Code, schnelle Ladezeiten und höchste Sicherheit.",
+    "aboutText2": "Aber noch wichtiger: Als angehender Lehrer weiß ich, wie man komplexe Dinge einfach und verständlich erklärt. Bei mir gibt es keine verwirrenden IT-Begriffe und keine versteckten Kosten. Ich nehme Sie an die Hand, erkläre Ihnen genau, was ich tue, und bin Ihr persönlicher Ansprechpartner direkt hier aus der Region.",
+    "workTagline": "Meine Arbeit",
+    "workHeadline": "Ausgewählte Projekte",
+    "demoProject": {
+      "title": "Demo-Website: Lokaler Dienstleister",
+      "description": "Eine voll funktionsfähige Demo-Seite mit modernem Design, extrem schnellen Ladezeiten und integrierter Terminbuchung. Perfekt optimiert für Smartphones.",
+      "imageAlt": "Vorschau der Demo Website",
+      "buttonText": "Demo-Projekt ansehen",
+      "link": "demo-link",
+      "tags": ["Astro", "Performance", "Buchungssystem"]
+    }
+  },
+  "cta": {
+    "headline": "Bereit für eine Website, die Ihnen Kunden statt Kopfschmerzen bringt?",
+    "description": "Lassen Sie uns ganz unverbindlich über Ihr Projekt sprechen.",
+    "buttonText": "Jetzt kostenloses Erstgespräch vereinbaren",
+    "buttonLink": "kontakt"
+  }
+}

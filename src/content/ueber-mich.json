@@ -1,0 +1,39 @@
+{
+  "header": {
+    "titleStart": "Hallo, ich bin Lukas - Ihr",
+    "titleHighlight": "Webdesigner",
+    "titleEnd": "aus Rednitzhembach",
+    "subtitle": "Als Informatikstudent fasziniert mich die digitale Welt. Als angehender Lehrer liegt mir aber vor allem eines am Herzen: Komplexe Dinge so zu erklären, dass sie jeder versteht."
+  },
+  "introParagraphs": [
+    "Ich bin davon überzeugt, dass ein professioneller Internetauftritt heute kein Luxus mehr sein darf – gerade für Handwerker, Dienstleister und Gastronomen hier in der Umgebung. Doch wer ein eigenes Geschäft führt, hat oft weder die Zeit noch die Nerven, sich nach Feierabend noch mit Servern, Ladezeiten und Design herumzuschlagen.",
+    "Hier komme ich ins Spiel. Ich nehme Ihnen diese Last komplett ab. Ich höre mir genau an, was Ihr Unternehmen besonders macht, und übersetze das in eine Website, die Ihre Kunden begeistert. Ohne Technik-Wirrwarr, dafür mit einem festen Ansprechpartner direkt vor Ort, der Ihnen den Arbeitsalltag spürbar erleichtert."
+  ],
+  "why": {
+    "heading": "Warum ich lokale Unternehmen digital mache",
+    "text": "Mir ist aufgefallen, dass viele großartige Handwerksbetriebe, Restaurants und Dienstleister in unserer Region online unter Wert verkauft werden. Veraltete Websites oder fehlende Online-Terminbuchungen kosten täglich Nerven und Kunden. Gleichzeitig sind große Werbeagenturen oft unbezahlbar und unpersönlich. Mein Ziel ist es, diese Lücke zu schließen: Ich baue moderne, bezahlbare Websites, die genau das tun, was sie sollen – Ihnen neue Kunden bringen und Zeit sparen."
+  },
+  "differentiators": [
+    {
+      "title": "Lokal & Persönlich",
+      "description": "Kein anonymes Callcenter. Ich bin direkt aus der Region und komme für Besprechungen auch gerne bei Ihnen im Betrieb vorbei.",
+      "iconName": "MapPin"
+    },
+    {
+      "title": "100% Transparent",
+      "description": "Sie wissen von Anfang an, was Ihre Website kostet. Keine versteckten Gebühren, keine bösen Überraschungen.",
+      "iconName": "ShieldCheck"
+    },
+    {
+      "title": "Alles aus einer Hand",
+      "description": "Von der ersten Idee über das Design bis hin zur Anmeldung bei Google. Ich kümmere mich um die Technik, Sie sich um Ihr Geschäft.",
+      "iconName": "PackageCheck"
+    }
+  ],
+  "cta": {
+    "headline": "Klingt nach einem Plan?",
+    "description": "Lassen Sie uns bei einem kurzen Telefonat herausfinden, wie wir Ihr Unternehmen online nach vorne bringen können.",
+    "buttonText": "Jetzt kostenloses Erstgespräch vereinbaren",
+    "buttonLink": "/kontakt"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "header": {
+    "titleStart": "Transparente Leistungen für Ihren",
+    "titleHighlight": "digitalen Erfolg",
+    "subtitle": "Von der ersten Idee bis zur fertigen High-Performance-Website. Erfahren Sie genau, wie ich arbeite und welche Pakete am besten zu Ihrem Unternehmen passen."
+  },
+  "servicesIntro": {
+    "titleTextStart": "Meine",
+    "titleTextHighlight": "Kernkompetenzen",
+    "titleTextEnd": "im Detail"
+  },
+  "serviceCards": [
+    { "title": "Individuelles Webdesign", "description": "Maßgeschneiderte Designs, die exakt zu Ihrer Marke passen und sich von Baukasten-Seiten abheben.", "iconName": "Code" },
+    { "title": "Lokales SEO", "description": "Werden Sie in der Region gefunden. Ich optimiere Ihre Seite für Google, damit Kunden direkt zu Ihnen kommen.", "iconName": "Search" },
+    { "title": "Performance-Boost", "description": "Ladezeiten unter einer Sekunde dank moderner Architektur. Das freut Ihre Kunden und das Google-Ranking.", "iconName": "Gauge" },
+    { "title": "Hosting & Wartung", "description": "Lehnen Sie sich zurück. Ich kümmere mich um Updates, Backups und einen sicheren Serverbetrieb.", "iconName": "Server" },
+    { "title": "Terminbuchung", "description": "Sparen Sie Zeit mit integrierten Systemen, die Ihre Kundenanfragen und Termine rund um die Uhr automatisch verwalten.", "iconName": "CalendarCheck" },
+    { "title": "Mobile Optimierung", "description": "Ihre Website sieht auf jedem Smartphone perfekt aus und bietet eine makellose Nutzererfahrung für unterwegs.", "iconName": "Smartphone" }
+  ],
+  "processTimelineHeading": "Der Weg zu Ihrer",
+  "processTimelineHighlight": "neuen Website",
+  "processTimeline": [
+    { "step": 1, "title": "Briefing & Konzept", "description": "Wir besprechen Ihre Ziele, Zielgruppe und Wünsche. Ich erstelle ein erstes Konzept und die Seitenstruktur." },
+    { "step": 2, "title": "Design-Entwurf", "description": "Sie erhalten einen visuellen Prototypen. Hier feilen wir gemeinsam an Farben, Schriften und dem Look & Feel." },
+    { "step": 3, "title": "Programmierung", "description": "Ich setze das Design in sauberen Code um. Ihre Seite wird rasend schnell und sieht auf dem Smartphone perfekt aus." },
+    { "step": 4, "title": "Launch & Support", "description": "Die Seite geht live! Auch danach stehe ich Ihnen für Änderungen, Wartung und Fragen zur Verfügung." }
+  ],
+  "pricingHeading": "Transparente",
+  "pricingHighlight": "Festpreise",
+  "pricingPackages": [
+    {
+      "name": "Starter",
+      "price": "990€",
+      "description": "Perfekt für die digitale Visitenkarte.",
+      "features": ["One-Pager Website", "Template-basiertes Design", "Basis Performance-Setup", "1 Monat Support"],
+      "ctaText": "Anfragen",
+      "ctaLink": "/kontakt"
+    },
+    {
+      "name": "Pro",
+      "price": "1.890€",
+      "description": "Für etablierte lokale Unternehmen.",
+      "features": ["Bis zu 5 Unterseiten", "Individuelles Design", "High-Speed Architektur", "Lokales SEO Basis-Setup", "3 Monate Support"],
+      "ctaText": "Projekt starten",
+      "ctaLink": "/kontakt",
+      "highlighted": true,
+      "badge": "Empfehlung"
+    },
+    {
+      "name": "Premium",
+      "price": "2.990€",
+      "description": "Das Rundum-Sorglos-Paket.",
+      "features": ["Unbegrenzte Seiten (CMS)", "Individuelles Design + Logo", "Erweitertes SEO & Analytics", "Terminbuchungssystem", "12 Monate Support"],
+      "ctaText": "Anfragen",
+      "ctaLink": "/kontakt"
+    }
+  ],
+  "disclaimer": {
+    "label": "Gut zu wissen:",
+    "text": "Jedes Unternehmen ist einzigartig, und genauso individuell sind auch meine Websites. Die oben genannten Pakete dienen zur ersten Orientierung. Gerne können wir Funktionen weglassen oder hinzufügen. Nach unserem kostenlosen Erstgespräch erstelle ich Ihnen ein individuelles Festpreis-Angebot, das exakt auf Ihre Wünsche zugeschnitten ist."
+  },
+  "cta": {
+    "headline": "Noch unsicher, welches Paket das richtige ist?",
+    "description": "Lassen Sie uns ganz unverbindlich über Ihr Projekt und Ihre Ziele sprechen.",
+    "buttonText": "Kostenloses Erstgespräch buchen",
+    "buttonLink": "/kontakt"
+  }
+}

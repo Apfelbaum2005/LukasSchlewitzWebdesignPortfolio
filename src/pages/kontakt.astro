@@ -1,11 +1,278 @@
 ---
-import { SITE_TITLE } from '../data/consts'
-
-import BaseLayout from "../layouts/BaseLayout.astro"
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SubpageHeader from '../components/SubpageHeader.astro';
+import { SITE_TITLE, CAL_ORIGIN, CAL_EMBED_JS, CAL_NAMESPACE, CAL_LINK } from '../data/consts';
+import { kontaktHeader, contactFormContent, bookingContent } from '../data/content';
 ---
 
-<BaseLayout title={SITE_TITLE}>
-	<main>
-        
-	</main>
+<BaseLayout
+    title={`Kontakt | ${SITE_TITLE}`}
+    description={kontaktHeader.subtitle}
+>
+    <main>
+        <SubpageHeader
+            titleStart={kontaktHeader.titleStart}
+            titleHighlight={kontaktHeader.titleHighlight}
+            titleEnd={kontaktHeader.titleEnd}
+            subtitle={kontaktHeader.subtitle}
+        />
+
+        <section class="contact-section">
+            <div class="container container--medium">
+                <div class="contact-grid">
+                    <form id="contact-form" class="glass-panel contact-form reveal" novalidate>
+                        <div class="form-row">
+                            <label for="name">{contactFormContent.nameLabel}</label>
+                            <input type="text" id="name" name="name" autocomplete="name" />
+                        </div>
+
+                        <div class="form-row">
+                            <label for="email">{contactFormContent.emailLabel}</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required />
+                        </div>
+
+                        <div class="form-row">
+                            <label for="phone">{contactFormContent.phoneLabel}</label>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel" />
+                        </div>
+
+                        <div class="form-row">
+                            <label for="message">{contactFormContent.messageLabel}</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <div class="hp-field" aria-hidden="true">
+                            <label for="website">Website</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+                        </div>
+
+                        <button type="submit" class="glow-button">
+                            <span class="btn-label">{contactFormContent.submitText}</span>
+                        </button>
+
+                        <p class="form-status" data-status role="status" aria-live="polite"></p>
+                    </form>
+
+                    <div class="booking-panel glass-panel reveal reveal-delay-1">
+                        <h2>{bookingContent.heading}</h2>
+                        <p>{bookingContent.text}</p>
+                        <div id="cal-booking"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </BaseLayout>
+
+<script define:vars={{
+    endpoint: '/api/contact',
+    submitText: contactFormContent.submitText,
+    sendingText: contactFormContent.sendingText,
+    successText: contactFormContent.successText,
+    errorText: contactFormContent.errorText
+}}>
+    const form = document.getElementById('contact-form');
+    const status = form?.querySelector('[data-status]');
+    const button = form?.querySelector('button[type="submit"]');
+    const label = button?.querySelector('.btn-label');
+
+    form?.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (!(form instanceof HTMLFormElement)) return;
+
+        const data = Object.fromEntries(new FormData(form).entries());
+
+        if (button) button.disabled = true;
+        if (label) label.textContent = sendingText;
+        if (status) {
+            status.textContent = '';
+            status.className = 'form-status';
+        }
+
+        try {
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const result = await response.json();
+
+            if (!response.ok) throw new Error(result.error || errorText);
+
+            form.reset();
+            if (status) {
+                status.textContent = successText;
+                status.classList.add('is-success');
+            }
+        } catch (error) {
+            if (status) {
+                status.textContent = error instanceof Error ? error.message : errorText;
+                status.classList.add('is-error');
+            }
+        } finally {
+            if (button) button.disabled = false;
+            if (label) label.textContent = submitText;
+        }
+    });
+</script>
+
+<script define:vars={{ calEmbedJs: CAL_EMBED_JS, calOrigin: CAL_ORIGIN, calNamespace: CAL_NAMESPACE, calLink: CAL_LINK }}>
+    (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+            let cal = C.Cal;
+            let ar = arguments;
+            if (!cal.loaded) {
+                cal.ns = {};
+                cal.q = cal.q || [];
+                d.head.appendChild(d.createElement("script")).src = A;
+                cal.loaded = true;
+            }
+            if (ar[0] === L) {
+                const api = function () { p(api, arguments); };
+                const namespace = ar[1];
+                api.q = api.q || [];
+                if (typeof namespace === "string") {
+                    cal.ns[namespace] = cal.ns[namespace] || api;
+                    p(cal.ns[namespace], ar);
+                    p(cal, ["initNamespace", namespace]);
+                } else p(cal, ar);
+                return;
+            }
+            p(cal, ar);
+        };
+    })(window, calEmbedJs, "init");
+
+    Cal("init", calNamespace, { origin: calOrigin });
+    Cal.ns[calNamespace]("inline", {
+        elementOrSelector: "#cal-booking",
+        config: { layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "dark" },
+        calLink: calLink
+    });
+    Cal.ns[calNamespace]("ui", {
+        theme: "dark",
+        styles: {
+            body: { background: "transparent" },
+            eventTypeListItem: { background: "transparent" }
+        },
+        cssVarsPerTheme: { light: { "cal-brand": "#3b82f6" }, dark: { "cal-brand": "#3b82f6" } },
+        hideEventTypeDetails: false,
+        layout: "month_view"
+    });
+</script>
+
+<style>
+    .contact-section {
+        padding: 2rem 0 6rem;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        align-items: start;
+    }
+
+    @media (min-width: 900px) {
+        .contact-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .contact-form,
+    .booking-panel {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-main);
+    }
+
+    input,
+    textarea {
+        font: inherit;
+        color: var(--text-main);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--glass-border);
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+        outline: none;
+        border-color: var(--accent-main);
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 8rem;
+    }
+
+    .hp-field {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        border: none;
+        margin-top: 0.5rem;
+        font: inherit;
+    }
+
+    button[type="submit"]:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .form-status {
+        margin-top: 1rem;
+        margin-bottom: 0;
+        font-size: 0.9rem;
+        min-height: 1.3em;
+    }
+
+    .form-status.is-success {
+        color: #4ade80;
+    }
+
+    .form-status.is-error {
+        color: #f87171;
+    }
+
+    .booking-panel h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: var(--text-main);
+    }
+
+    .booking-panel > p {
+        color: var(--text-muted);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    #cal-booking {
+        width: 100%;
+        min-height: 480px;
+        flex-grow: 1;
+    }
+</style>

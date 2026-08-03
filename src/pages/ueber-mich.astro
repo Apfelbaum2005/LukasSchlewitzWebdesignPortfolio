@@ -1,11 +1,119 @@
 ---
-import { SITE_TITLE } from '../data/consts'
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SubpageHeader from '../components/SubpageHeader.astro';
+import CardsGrid from '../components/CardsGrid.astro';
+import Card from '../components/Card.astro';
+import CtaSection from '../components/Start-CtaSection.astro';
+import { SITE_TITLE } from '../data/consts';
+import {
+    ueberMichHeader,
+    ueberMichIntroParagraphs,
+    ueberMichWhy,
+    ueberMichDifferentiators,
+    ueberMichCta
+} from '../data/content';
+import { MapPin, ShieldCheck, PackageCheck } from 'lucide-astro';
 
-import BaseLayout from "../layouts/BaseLayout.astro"
+// Maps the iconName string stored in content.ts to the matching icon component
+const iconMap = { MapPin, ShieldCheck, PackageCheck };
 ---
 
-<BaseLayout title={SITE_TITLE}>
-	<main>
-        
-	</main>
+<BaseLayout
+    title={`Über mich | ${SITE_TITLE}`}
+    description={ueberMichHeader.subtitle}
+>
+    <main>
+        <SubpageHeader
+            titleStart={ueberMichHeader.titleStart}
+            titleHighlight={ueberMichHeader.titleHighlight}
+            titleEnd={ueberMichHeader.titleEnd}
+            subtitle={ueberMichHeader.subtitle}
+        />
+
+        <section class="intro-section">
+            <div class="container container--narrow">
+                {ueberMichIntroParagraphs.map((paragraph) => (
+                    <p class="reveal">{paragraph}</p>
+                ))}
+            </div>
+        </section>
+
+        <section class="why-section">
+            <div class="container container--medium">
+                <div class="glass-panel why-card reveal">
+                    <h2>{ueberMichWhy.heading}</h2>
+                    <p>{ueberMichWhy.text}</p>
+                </div>
+            </div>
+        </section>
+
+        <CardsGrid wrap={true}>
+            {ueberMichDifferentiators.map((card, index) => {
+                const IconComponent = iconMap[card.iconName as keyof typeof iconMap];
+                return (
+                    <Card title={card.title} delayIndex={index} isSolution={true}>
+                        {IconComponent && <IconComponent slot="icon" />}
+                        {card.description}
+                    </Card>
+                )
+            })}
+        </CardsGrid>
+
+        <CtaSection
+            headline={ueberMichCta.headline}
+            description={ueberMichCta.description}
+            buttonText={ueberMichCta.buttonText}
+            buttonLink={ueberMichCta.buttonLink}
+        />
+    </main>
 </BaseLayout>
+
+<style>
+    .intro-section {
+        padding: 2rem 0 4rem;
+    }
+
+    .intro-section p {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+    }
+
+    .intro-section p:last-child {
+        margin-bottom: 0;
+    }
+
+    .why-section {
+        padding: 0 0 2rem;
+    }
+
+    .why-card {
+        text-align: center;
+        padding: 3rem 2.5rem;
+    }
+
+    .why-card h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+    }
+
+    .why-card p {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        max-width: 720px;
+        margin-inline: auto;
+    }
+
+    @media (max-width: 768px) {
+        .why-card {
+            padding: 2rem 1.5rem;
+        }
+
+        .why-card h2 {
+            font-size: 1.6rem;
+        }
+    }
+</style>

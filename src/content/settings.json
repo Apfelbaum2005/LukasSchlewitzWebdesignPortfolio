@@ -1,0 +1,14 @@
+{
+  "siteTitle": "Lukas Schlewitz Webdesign",
+  "siteDescription": "Modernes Webdesign für lokale Unternehmen im Großraum Nürnberg.",
+  "contactEmail": "kontakt@lukasschlewitz.de",
+  "contactPhone": "+49 177 2585786",
+  "businessAddress": {
+    "name": "Lukas Schlewitz",
+    "street": "Zur Reuthschaft 3i",
+    "postalCode": "91126",
+    "city": "Rednitzhembach",
+    "country": "DE"
+  },
+  "serviceAreas": ["Rednitzhembach", "Nürnberg", "Erlangen", "Roth"]
+}
