@@ -1,9 +1,10 @@
 {
   "hero": {
-    "headlineStart": "Modernes Webdesign für lokale Unternehmen im",
+    "headlineStart": "Modernes Webdesign im",
     "headlineHighlight": "Großraum Nürnberg",
     "headlineEnd": "",
-    "subtitle": "Gewinnen Sie mehr Kunden durch einen professionellen Internetauftritt und intelligente Terminbuchungen. Ich nehme Ihnen die komplette Technik ab - unkompliziert, persönlich vor Ort und zum fairen Festpreis.",
+    "subtitle": "Ich baue Ihnen eine Website, die wirklich neue Kunden bringt, inklusive Terminbuchung, damit nicht ständig das Telefon klingelt. Um die Technik kümmere ich mich komplett – unkompliziert, persönlich und zum Festpreis, den Sie von Anfang an kennen.",
+    "subtitleMobile": "Eine Website, die neue Kunden bringt, inklusive Terminbuchung. Die Technik übernehme ich komplett, zum Festpreis.",
     "buttonText": "Jetzt kostenloses Erstgespräch vereinbaren",
     "buttonLink": "kontakt"
   },
@@ -15,54 +16,55 @@
   "problemCards": [
     {
       "title": "Ständige Anrufe?",
-      "description": "Das Telefon klingelt ununterbrochen wegen Terminanfragen und reißt Sie aus der Arbeit. Es fehlt ein intelligentes Online-Buchungssystem, das Ihnen die Arbeit abnimmt.",
+      "description": "Kaum sind Sie in der Arbeit vertieft, klingelt schon wieder das Telefon wegen einer Terminanfrage. Mit einem Online-Buchungssystem müsste das gar nicht sein.",
       "iconName": "Phone"
     },
     {
       "title": "Unsichtbar auf Google?",
-      "description": "Lokale Kunden suchen online nach Ihren Dienstleistungen, landen aber bei der Konkurrenz, weil Sie nicht gefunden werden. Es mangelt an regionaler Sichtbarkeit.",
+      "description": "Menschen aus Ihrer Umgebung suchen genau jetzt nach dem, was Sie anbieten, und landen bei der Konkurrenz, weil man Sie online einfach nicht findet.",
       "iconName": "MapPinOff"
     },
     {
       "title": "Veraltetes Design?",
-      "description": "Ihre aktuelle Seite sieht auf Smartphones unschön aus. 70% der Kunden surfen mobil. Ein schlechtes Design kostet Vertrauen und macht die Seite unbrauchbar.",
+      "description": "Auf dem Handy wirkt Ihre Seite wie aus einer anderen Zeit. Und weil die meisten Kunden mobil surfen, kostet das Vertrauen, noch bevor sie gelesen haben, was Sie anbieten.",
       "iconName": "Smartphone"
     }
   ],
   "solutionsIntro": {
-    "titleTextStart": "Meine",
-    "titleTextHighlight": "Lösungen",
-    "titleTextEnd": "für Ihren digitalen Erfolg",
+    "titleTextStart": "Und so",
+    "titleTextHighlight": "helfe ich",
+    "titleTextEnd": "Ihnen weiter",
     "buttonLeistungenText": "Alle Leistungen im Detail ansehen",
     "buttonLeistungenLink": "leistungen"
   },
   "solutionCards": [
     {
       "title": "Modernes Webdesign",
-      "description": "Ich erstelle Ihnen eine blitzschnelle, optisch ansprechende Website, die auf jedem Smartphone perfekt aussieht und Ihre Besucher in Kunden verwandelt.",
+      "description": "Ich baue Ihnen eine schnelle, schöne Website, die auf dem Handy genauso gut aussieht wie am Computer und aus Besuchern echte Kunden macht.",
       "iconName": "Monitor"
     },
     {
       "title": "24/7 Terminbuchung",
-      "description": "Sparen Sie sich das Telefon-Chaos! Ich integriere ein smartes Buchungstool, mit dem Ihre Kunden rund um die Uhr selbst freie Termine eintragen können.",
+      "description": "Schluss mit dem Telefon-Chaos: Ihre Kunden buchen sich Termine künftig selbst, wann immer es ihnen passt, auch sonntags um 22 Uhr.",
       "iconName": "CalendarCheck"
     },
     {
       "title": "Lokale Sichtbarkeit",
-      "description": "Was nützt die schönste Website, wenn sie niemand findet? Ich optimiere Ihre Seite so, dass Kunden aus der Region Sie bei Google ganz oben sehen.",
+      "description": "Die schönste Website nützt nichts, wenn niemand sie findet. Ich sorge dafür, dass Kunden aus der Region Sie bei Google auch tatsächlich sehen.",
       "iconName": "MapPin"
     }
   ],
   "aboutWork": {
     "aboutTagline": "Über mich",
     "aboutHeadline": "Hallo, ich bin Lukas.",
-    "aboutText1": "Dank meiner Erfahrung durch vier Semester Informatikstudium sorge ich unter der Haube Ihrer neuen Website für sauberen Code, schnelle Ladezeiten und höchste Sicherheit.",
-    "aboutText2": "Aber noch wichtiger: Als angehender Lehrer weiß ich, wie man komplexe Dinge einfach und verständlich erklärt. Bei mir gibt es keine verwirrenden IT-Begriffe und keine versteckten Kosten. Ich nehme Sie an die Hand, erkläre Ihnen genau, was ich tue, und bin Ihr persönlicher Ansprechpartner direkt hier aus der Region.",
+    "aboutText1": "Durch mein Informatikstudium weiß ich genau, worauf es unter der Haube ankommt: sauberer Code, schnelle Ladezeiten und eine Website, die sicher läuft.",
+    "aboutText2": "Noch wichtiger ist mir aber etwas anderes: Als angehender Lehrer kann ich komplizierte Dinge einfach erklären. Sie werden von mir keine kryptischen IT-Begriffe hören und keine Rechnung mit versteckten Posten bekommen. Stattdessen erkläre ich Ihnen in Ruhe, was ich mache und warum, und bin auch danach für Sie da, hier aus der Region.",
+    "aboutMobileText": "Durch mein Informatikstudium baue ich technisch saubere, sichere Websites. Und weil ich angehender Lehrer bin, erkläre ich Ihnen alles verständlich, ganz ohne Fachchinesisch oder versteckte Kosten.",
     "workTagline": "Meine Arbeit",
     "workHeadline": "Ausgewählte Projekte",
     "demoProject": {
       "title": "Demo-Website: Lokaler Dienstleister",
-      "description": "Eine voll funktionsfähige Demo-Seite mit modernem Design, extrem schnellen Ladezeiten und integrierter Terminbuchung. Perfekt optimiert für Smartphones.",
+      "description": "Eine voll funktionsfähige Beispiel-Website mit Terminbuchung, die auch auf dem Handy richtig gut aussieht, und läuft.",
       "imageAlt": "Vorschau der Demo Website",
       "buttonText": "Demo-Projekt ansehen",
       "link": "demo-link",
@@ -70,8 +72,8 @@
     }
   },
   "cta": {
-    "headline": "Bereit für eine Website, die Ihnen Kunden statt Kopfschmerzen bringt?",
-    "description": "Lassen Sie uns ganz unverbindlich über Ihr Projekt sprechen.",
+    "headline": "Bereit für eine Website, die Kunden bringt statt Kopfschmerzen?",
+    "description": "Lassen Sie uns unverbindlich über Ihr Projekt sprechen.",
     "buttonText": "Jetzt kostenloses Erstgespräch vereinbaren",
     "buttonLink": "kontakt"
   }

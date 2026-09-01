@@ -25,3 +25,6 @@ public/mail-config.php
 
 # jetbrains setting folder
 .idea/
+
+# local Claude Code permission grants (personal to this machine/session)
+.claude/settings.local.json

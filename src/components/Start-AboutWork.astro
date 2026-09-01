@@ -4,6 +4,7 @@ export interface Props {
     aboutHeadline: string;
     aboutText1: string;
     aboutText2: string;
+    aboutMobileText: string;
     workTagline: string;
     workHeadline: string;
     demoProject: {
@@ -16,11 +17,12 @@ export interface Props {
     };
 }
 
-const { 
+const {
     aboutTagline,
     aboutHeadline,
     aboutText1,
     aboutText2,
+    aboutMobileText,
     workTagline,
     workHeadline,
     demoProject
@@ -40,7 +42,7 @@ const renderedHTML = `<p>${aboutText1}</p><p>${aboutText2}</p>`;
                 <span class="tagline">{aboutTagline}</span>
                 <h2>{aboutHeadline}</h2> 
                 
-                <div class="terminal-window glass-panel js-terminal" data-code={rawCode} data-render={renderedHTML}>
+                <div class="terminal-window glass-panel js-terminal desktop-only" data-code={rawCode} data-render={renderedHTML}>
                     <div class="terminal-header">
                         <div class="mac-dots">
                             <span class="dot close"></span>
@@ -49,11 +51,16 @@ const renderedHTML = `<p>${aboutText1}</p><p>${aboutText2}</p>`;
                         </div>
                         <span class="terminal-title">about_me.html</span>
                     </div>
-                    
+
                     <div class="terminal-body js-terminal-body">
                         <span class="code-font js-typewriter"></span><span class="cursor"></span>
                     </div>
                 </div>
+
+                <a href="/ueber-mich" class="mobile-about-card glass-panel mobile-only">
+                    <p>{aboutMobileText}</p>
+                    <span class="mobile-about-link">Mehr über mich <span aria-hidden="true">&rarr;</span></span>
+                </a>
             </div>
 
             <div class="work-content reveal reveal-delay-1">
@@ -222,6 +229,34 @@ const renderedHTML = `<p>${aboutText1}</p><p>${aboutText2}</p>`;
         font-family: system-ui, -apple-system, sans-serif;
     }
 
+    /* Simple, static replacement for the animated terminal window on small screens -
+       no typewriter effect, no monospace chrome, just the text. */
+    .mobile-about-card {
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s ease, border-color 0.3s ease;
+    }
+
+    .mobile-about-card:active {
+        transform: scale(0.98);
+    }
+
+    .mobile-about-card p {
+        color: var(--text-muted);
+        line-height: 1.6;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .mobile-about-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        color: var(--accent-main);
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
     .demo-card-wrapper {
         display: block;
         position: relative;
@@ -315,5 +350,42 @@ const renderedHTML = `<p>${aboutText1}</p><p>${aboutText2}</p>`;
         font-size: 0.75rem;
         font-weight: 600;
         border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        /* .terminal-window already sets its own display:flex, which otherwise beats the
+           global .desktop-only rule on specificity - override it here instead. */
+        .terminal-window {
+            display: none;
+        }
+
+        .about-work-section {
+            padding: 4rem 0;
+        }
+
+        .split-layout {
+            gap: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .tagline {
+            margin-bottom: 1rem;
+        }
+
+        .demo-image-placeholder {
+            height: 160px;
+        }
+
+        .demo-info {
+            padding: 1.5rem;
+        }
+
+        .demo-info h3 {
+            font-size: 1.25rem;
+        }
     }
 </style>

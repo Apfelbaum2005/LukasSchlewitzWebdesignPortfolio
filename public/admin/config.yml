@@ -56,6 +56,7 @@ collections:
               - { label: "Überschrift (farbig hervorgehoben)", name: headlineHighlight, widget: string }
               - { label: "Überschrift (Teil 2)", name: headlineEnd, widget: string, required: false }
               - { label: "Untertitel", name: subtitle, widget: text }
+              - { label: "Untertitel (kurze Mobil-Version, optional)", name: subtitleMobile, widget: text, required: false, hint: "Wird nur auf dem Handy angezeigt. Leer lassen, um überall den normalen Untertitel zu zeigen." }
               - { label: "Button-Text", name: buttonText, widget: string }
               - { label: "Button-Ziel (Link)", name: buttonLink, widget: string }
           - label: "Problem-Bereich: Überschrift"
@@ -98,6 +99,7 @@ collections:
               - { label: "Überschrift", name: aboutHeadline, widget: string }
               - { label: "Text 1", name: aboutText1, widget: text }
               - { label: "Text 2", name: aboutText2, widget: text }
+              - { label: "Kurztext (nur für die Handy-Ansicht)", name: aboutMobileText, widget: text, hint: "Ersetzt Text 1 + Text 2 auf dem Handy durch einen kürzeren, einfachen Absatz." }
               - { label: "Kicker (Arbeitsproben)", name: workTagline, widget: string }
               - { label: "Überschrift (Arbeitsproben)", name: workHeadline, widget: string }
               - label: "Demo-Projekt"
@@ -133,6 +135,7 @@ collections:
               - { label: "Text (Teil 1)", name: titleStart, widget: string }
               - { label: "Hervorgehoben", name: titleHighlight, widget: string }
               - { label: "Untertitel", name: subtitle, widget: text }
+              - { label: "Untertitel (kurze Mobil-Version, optional)", name: subtitleMobile, widget: text, required: false, hint: "Wird nur auf dem Handy angezeigt." }
           - label: "Kernkompetenzen: Überschrift"
             name: servicesIntro
             widget: object
@@ -179,6 +182,7 @@ collections:
             fields:
               - { label: "Fett hervorgehobenes Lead-in (z. B. \"Gut zu wissen:\")", name: label, widget: string }
               - { label: "Text", name: text, widget: text }
+              - { label: "Text (kurze Mobil-Version, optional)", name: textMobile, widget: text, required: false, hint: "Wird nur auf dem Handy angezeigt." }
           - label: "Abschluss-Aufruf (CTA)"
             name: cta
             widget: object
@@ -203,17 +207,20 @@ collections:
               - { label: "Hervorgehoben", name: titleHighlight, widget: string }
               - { label: "Text (Teil 2)", name: titleEnd, widget: string, required: false }
               - { label: "Untertitel", name: subtitle, widget: text }
+              - { label: "Untertitel (kurze Mobil-Version, optional)", name: subtitleMobile, widget: text, required: false, hint: "Wird nur auf dem Handy angezeigt." }
           - label: "Einleitungstexte"
             name: introParagraphs
             widget: list
             label_singular: "Absatz"
             field: { label: "Text", name: paragraph, widget: text }
+          - { label: "Einleitungstext (kurze Mobil-Version, optional)", name: introTextMobile, widget: text, required: false, hint: "Ersetzt die Einleitungstexte auf dem Handy durch einen kürzeren Absatz." }
           - label: "Karte: \"Warum ich das mache\""
             name: why
             widget: object
             fields:
               - { label: "Überschrift", name: heading, widget: string }
               - { label: "Text", name: text, widget: text }
+              - { label: "Text (kurze Mobil-Version, optional)", name: textMobile, widget: text, required: false, hint: "Wird nur auf dem Handy angezeigt." }
           - label: "Die drei Vorteile"
             name: differentiators
             widget: list
@@ -246,6 +253,7 @@ collections:
               - { label: "Hervorgehoben", name: titleHighlight, widget: string }
               - { label: "Text (Teil 2)", name: titleEnd, widget: string, required: false }
               - { label: "Untertitel", name: subtitle, widget: text }
+              - { label: "Untertitel (kurze Mobil-Version, optional)", name: subtitleMobile, widget: text, required: false, hint: "Wird nur auf dem Handy angezeigt." }
           - label: "Formular-Texte"
             name: form
             widget: object

@@ -8,6 +8,7 @@ import { SITE_TITLE } from '../data/consts';
 import {
     ueberMichHeader,
     ueberMichIntroParagraphs,
+    ueberMichIntroTextMobile,
     ueberMichWhy,
     ueberMichDifferentiators,
     ueberMichCta
@@ -28,13 +29,25 @@ const iconMap = { MapPin, ShieldCheck, PackageCheck };
             titleHighlight={ueberMichHeader.titleHighlight}
             titleEnd={ueberMichHeader.titleEnd}
             subtitle={ueberMichHeader.subtitle}
+            subtitleMobile={ueberMichHeader.subtitleMobile}
         />
 
         <section class="intro-section">
             <div class="container container--narrow">
-                {ueberMichIntroParagraphs.map((paragraph) => (
-                    <p class="reveal">{paragraph}</p>
-                ))}
+                {ueberMichIntroTextMobile ? (
+                    <>
+                        <div class="desktop-only">
+                            {ueberMichIntroParagraphs.map((paragraph) => (
+                                <p class="reveal">{paragraph}</p>
+                            ))}
+                        </div>
+                        <p class="reveal mobile-only">{ueberMichIntroTextMobile}</p>
+                    </>
+                ) : (
+                    ueberMichIntroParagraphs.map((paragraph) => (
+                        <p class="reveal">{paragraph}</p>
+                    ))
+                )}
             </div>
         </section>
 
@@ -42,7 +55,14 @@ const iconMap = { MapPin, ShieldCheck, PackageCheck };
             <div class="container container--medium">
                 <div class="glass-panel why-card reveal">
                     <h2>{ueberMichWhy.heading}</h2>
-                    <p>{ueberMichWhy.text}</p>
+                    {ueberMichWhy.textMobile ? (
+                        <>
+                            <p class="desktop-only">{ueberMichWhy.text}</p>
+                            <p class="mobile-only">{ueberMichWhy.textMobile}</p>
+                        </>
+                    ) : (
+                        <p>{ueberMichWhy.text}</p>
+                    )}
                 </div>
             </div>
         </section>
@@ -108,12 +128,31 @@ const iconMap = { MapPin, ShieldCheck, PackageCheck };
     }
 
     @media (max-width: 768px) {
+        .intro-section {
+            padding: 1.5rem 0 2.5rem;
+        }
+
+        .intro-section p {
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .why-section {
+            padding: 0 0 1.5rem;
+        }
+
         .why-card {
             padding: 2rem 1.5rem;
         }
 
         .why-card h2 {
             font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .why-card p {
+            font-size: 1rem;
+            line-height: 1.7;
         }
     }
 </style>

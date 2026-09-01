@@ -1,38 +1,41 @@
 {
   "header": {
-    "titleStart": "Hallo, ich bin Lukas - Ihr",
-    "titleHighlight": "Webdesigner",
-    "titleEnd": "aus Rednitzhembach",
-    "subtitle": "Als Informatikstudent fasziniert mich die digitale Welt. Als angehender Lehrer liegt mir aber vor allem eines am Herzen: Komplexe Dinge so zu erklären, dass sie jeder versteht."
+    "titleStart": "Hallo, ich bin Lukas,",
+    "titleHighlight": "Ihr Webdesigner",
+    "titleEnd": "aus Erlangen",
+    "subtitle": "Die digitale Welt fasziniert mich, seit ich Informatik studiere. Aber eigentlich bin ich angehender Lehrer, und genau das prägt, wie ich arbeite: Ich erkläre gerne, statt nur zu machen.",
+    "subtitleMobile": "Informatikstudent und angehender Lehrer – deshalb erkläre ich gerne, statt nur zu machen."
   },
   "introParagraphs": [
-    "Ich bin davon überzeugt, dass ein professioneller Internetauftritt heute kein Luxus mehr sein darf – gerade für Handwerker, Dienstleister und Gastronomen hier in der Umgebung. Doch wer ein eigenes Geschäft führt, hat oft weder die Zeit noch die Nerven, sich nach Feierabend noch mit Servern, Ladezeiten und Design herumzuschlagen.",
-    "Hier komme ich ins Spiel. Ich nehme Ihnen diese Last komplett ab. Ich höre mir genau an, was Ihr Unternehmen besonders macht, und übersetze das in eine Website, die Ihre Kunden begeistert. Ohne Technik-Wirrwarr, dafür mit einem festen Ansprechpartner direkt vor Ort, der Ihnen den Arbeitsalltag spürbar erleichtert."
+    "Für mich ist eine gute Website heute kein Luxus mehr, sondern einfach nötig, egal ob Sie Handwerker, Dienstleister oder Gastronom sind. Nur: Wer den ganzen Tag im eigenen Betrieb steht, hat abends selten Lust, sich noch mit Servern und Ladezeiten herumzuschlagen.",
+    "Genau da komme ich ins Spiel. Ich höre mir an, was Ihren Betrieb besonders macht, und baue daraus eine Website, die das auch zeigt. Technik-Fachchinesisch bleibt bei mir draußen, dafür haben Sie einen festen Ansprechpartner direkt aus der Region, der auch mal ans Telefon geht."
   ],
+  "introTextMobile": "Eine gute Website ist heute kein Luxus mehr, egal ob Handwerk, Gastro oder Dienstleistung. Nur hat kaum jemand abends noch Nerven für Server und Design. Genau da komme ich ins Spiel: eine Website, die zeigt, was Ihren Betrieb besonders macht, ohne Technik-Fachchinesisch, dafür mit einem festen Ansprechpartner aus der Region.",
   "why": {
     "heading": "Warum ich lokale Unternehmen digital mache",
-    "text": "Mir ist aufgefallen, dass viele großartige Handwerksbetriebe, Restaurants und Dienstleister in unserer Region online unter Wert verkauft werden. Veraltete Websites oder fehlende Online-Terminbuchungen kosten täglich Nerven und Kunden. Gleichzeitig sind große Werbeagenturen oft unbezahlbar und unpersönlich. Mein Ziel ist es, diese Lücke zu schließen: Ich baue moderne, bezahlbare Websites, die genau das tun, was sie sollen – Ihnen neue Kunden bringen und Zeit sparen."
+    "text": "Mir fällt immer wieder auf, wie viele richtig gute Betriebe aus unserer Region online unter Wert verkauft werden: eine veraltete Website hier, eine fehlende Terminbuchung da, und schon kosten sie täglich Nerven und Kunden. Große Werbeagenturen sind für die meisten davon schlicht zu teuer und zu unpersönlich. Genau da will ich ansetzen, mit bezahlbaren Websites, die tun, wofür sie da sind: neue Kunden bringen und Ihnen Zeit sparen.",
+    "textMobile": "Viele richtig gute Betriebe aus der Region werden online unter Wert verkauft, oft wegen einer veralteten Website oder fehlender Terminbuchung. Ich baue bezahlbare Websites, die genau das ändern: neue Kunden bringen und Zeit sparen."
   },
   "differentiators": [
     {
       "title": "Lokal & Persönlich",
-      "description": "Kein anonymes Callcenter. Ich bin direkt aus der Region und komme für Besprechungen auch gerne bei Ihnen im Betrieb vorbei.",
+      "description": "Kein Callcenter, kein anonymes Chat-Fenster. Ich bin aus der Region und komme für ein Gespräch auch gerne bei Ihnen im Betrieb vorbei.",
       "iconName": "MapPin"
     },
     {
       "title": "100% Transparent",
-      "description": "Sie wissen von Anfang an, was Ihre Website kostet. Keine versteckten Gebühren, keine bösen Überraschungen.",
+      "description": "Sie wissen von Anfang an, was Ihre Website kostet. Keine Überraschungen auf der Rechnung, versprochen.",
       "iconName": "ShieldCheck"
     },
     {
       "title": "Alles aus einer Hand",
-      "description": "Von der ersten Idee über das Design bis hin zur Anmeldung bei Google. Ich kümmere mich um die Technik, Sie sich um Ihr Geschäft.",
+      "description": "Von der ersten Idee bis zur Anmeldung bei Google mache ich alles selbst. So kümmern Sie sich ums Geschäft, ich um die Technik.",
       "iconName": "PackageCheck"
     }
   ],
   "cta": {
     "headline": "Klingt nach einem Plan?",
-    "description": "Lassen Sie uns bei einem kurzen Telefonat herausfinden, wie wir Ihr Unternehmen online nach vorne bringen können.",
+    "description": "Dann lassen Sie uns kurz telefonieren, unverbindlich, und Sie wissen danach genau, woran Sie sind.",
     "buttonText": "Jetzt kostenloses Erstgespräch vereinbaren",
     "buttonLink": "/kontakt"
   }

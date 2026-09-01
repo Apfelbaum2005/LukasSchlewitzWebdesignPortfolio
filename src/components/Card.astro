@@ -59,4 +59,20 @@ const { title, delayIndex = 0, isSolution = false } = Astro.props;
     font-size: 0.95rem;
     line-height: 1.6;
   }
+
+  @media (max-width: 768px) {
+    .icon-wrapper {
+      padding: 0.65rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+    }
+  }
 </style>

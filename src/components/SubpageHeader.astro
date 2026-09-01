@@ -4,22 +4,30 @@ export interface Props {
     titleHighlight: string;
     titleEnd?: string;
     subtitle: string;
+    subtitleMobile?: string;
 }
 
-const { titleStart, titleHighlight, titleEnd = "", subtitle } = Astro.props;
+const { titleStart, titleHighlight, titleEnd = "", subtitle, subtitleMobile } = Astro.props;
 ---
 
 <section class="subpage-header">
     <div class="container container--narrow reveal">
         <h1>{titleStart} <span class="text-gradient">{titleHighlight}</span> {titleEnd}</h1>
-        <p class="subtitle">{subtitle}</p>
+        {subtitleMobile ? (
+            <>
+                <p class="subtitle desktop-only">{subtitle}</p>
+                <p class="subtitle mobile-only">{subtitleMobile}</p>
+            </>
+        ) : (
+            <p class="subtitle">{subtitle}</p>
+        )}
     </div>
 </section>
 
 <style>
     .subpage-header {
         position: relative;
-        padding: 8rem 0 3rem; /* extra top space clears the fixed header */
+        padding: 11rem 0 3rem; /* extra top space clears the fixed header */
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -58,7 +66,7 @@ const { titleStart, titleHighlight, titleEnd = "", subtitle } = Astro.props;
             font-size: 1rem;
         }
         .subpage-header {
-            padding-top: 7rem;
+            padding-top: 9.5rem;
             min-height: 25vh;
         }
     }

@@ -1,29 +1,30 @@
 {
   "header": {
-    "titleStart": "Transparente Leistungen für Ihren",
-    "titleHighlight": "digitalen Erfolg",
-    "subtitle": "Von der ersten Idee bis zur fertigen High-Performance-Website. Erfahren Sie genau, wie ich arbeite und welche Pakete am besten zu Ihrem Unternehmen passen."
+    "titleStart": "Meine Leistungen,",
+    "titleHighlight": "transparent erklärt",
+    "subtitle": "Von der ersten Idee bis zur fertigen Website, die auch wirklich schnell lädt: Hier erfahren Sie, wie ich arbeite und welches Paket zu Ihnen passt.",
+    "subtitleMobile": "Von der Idee bis zur fertigen, schnellen Website – so arbeite ich."
   },
   "servicesIntro": {
-    "titleTextStart": "Meine",
-    "titleTextHighlight": "Kernkompetenzen",
-    "titleTextEnd": "im Detail"
+    "titleTextStart": "Das übernehme ich",
+    "titleTextHighlight": "für Sie",
+    "titleTextEnd": ""
   },
   "serviceCards": [
-    { "title": "Individuelles Webdesign", "description": "Maßgeschneiderte Designs, die exakt zu Ihrer Marke passen und sich von Baukasten-Seiten abheben.", "iconName": "Code" },
-    { "title": "Lokales SEO", "description": "Werden Sie in der Region gefunden. Ich optimiere Ihre Seite für Google, damit Kunden direkt zu Ihnen kommen.", "iconName": "Search" },
-    { "title": "Performance-Boost", "description": "Ladezeiten unter einer Sekunde dank moderner Architektur. Das freut Ihre Kunden und das Google-Ranking.", "iconName": "Gauge" },
-    { "title": "Hosting & Wartung", "description": "Lehnen Sie sich zurück. Ich kümmere mich um Updates, Backups und einen sicheren Serverbetrieb.", "iconName": "Server" },
-    { "title": "Terminbuchung", "description": "Sparen Sie Zeit mit integrierten Systemen, die Ihre Kundenanfragen und Termine rund um die Uhr automatisch verwalten.", "iconName": "CalendarCheck" },
-    { "title": "Mobile Optimierung", "description": "Ihre Website sieht auf jedem Smartphone perfekt aus und bietet eine makellose Nutzererfahrung für unterwegs.", "iconName": "Smartphone" }
+    { "title": "Individuelles Webdesign", "description": "Kein Baukasten-Look von der Stange, sondern ein Design, das wirklich zu Ihrer Marke passt.", "iconName": "Code" },
+    { "title": "Lokales SEO", "description": "Ich sorge dafür, dass Google Sie in der Region auch tatsächlich anzeigt, damit Kunden Sie finden, bevor sie bei der Konkurrenz landen.", "iconName": "Search" },
+    { "title": "Performance-Boost", "description": "Ihre Seite lädt in unter einer Sekunde. Das merken Ihre Kunden, und Google auch.", "iconName": "Gauge" },
+    { "title": "Hosting & Wartung", "description": "Um Updates, Backups und die Serversicherheit kümmere ich mich. Sie müssen sich um nichts davon Gedanken machen.", "iconName": "Server" },
+    { "title": "Terminbuchung", "description": "Ihre Kunden buchen selbst, Sie sparen sich das Hin und Her am Telefon, rund um die Uhr, auch wenn Sie längst Feierabend haben.", "iconName": "CalendarCheck" },
+    { "title": "Mobile Optimierung", "description": "Auf dem Handy sieht Ihre Seite genauso gut aus wie am Bildschirm, und die meisten Ihrer Besucher kommen genau darüber.", "iconName": "Smartphone" }
   ],
   "processTimelineHeading": "Der Weg zu Ihrer",
   "processTimelineHighlight": "neuen Website",
   "processTimeline": [
-    { "step": 1, "title": "Briefing & Konzept", "description": "Wir besprechen Ihre Ziele, Zielgruppe und Wünsche. Ich erstelle ein erstes Konzept und die Seitenstruktur." },
-    { "step": 2, "title": "Design-Entwurf", "description": "Sie erhalten einen visuellen Prototypen. Hier feilen wir gemeinsam an Farben, Schriften und dem Look & Feel." },
-    { "step": 3, "title": "Programmierung", "description": "Ich setze das Design in sauberen Code um. Ihre Seite wird rasend schnell und sieht auf dem Smartphone perfekt aus." },
-    { "step": 4, "title": "Launch & Support", "description": "Die Seite geht live! Auch danach stehe ich Ihnen für Änderungen, Wartung und Fragen zur Verfügung." }
+    { "step": 1, "title": "Briefing & Konzept", "description": "Wir setzen uns zusammen, telefonisch oder bei Ihnen vor Ort, und besprechen, was Ihre Website leisten soll. Daraus entsteht ein erstes Konzept." },
+    { "step": 2, "title": "Design-Entwurf", "description": "Sie bekommen einen ersten Entwurf zu sehen, und gemeinsam feilen wir an Farben, Schrift und Look, bis es passt." },
+    { "step": 3, "title": "Programmierung", "description": "Ich setze das Design in Code um, sauber und so, dass Ihre Seite auch auf dem Handy schnell lädt und gut aussieht." },
+    { "step": 4, "title": "Launch & Support", "description": "Ihre Seite geht live. Und auch danach bin ich für Änderungen, Fragen oder einfach eine kurze Rückmeldung erreichbar." }
   ],
   "pricingHeading": "Transparente",
   "pricingHighlight": "Festpreise",
@@ -31,7 +32,7 @@
     {
       "name": "Starter",
       "price": "990€",
-      "description": "Perfekt für die digitale Visitenkarte.",
+      "description": "Ihre digitale Visitenkarte, schlicht und schnell online.",
       "features": ["One-Pager Website", "Template-basiertes Design", "Basis Performance-Setup", "1 Monat Support"],
       "ctaText": "Anfragen",
       "ctaLink": "/kontakt"
@@ -39,7 +40,7 @@
     {
       "name": "Pro",
       "price": "1.890€",
-      "description": "Für etablierte lokale Unternehmen.",
+      "description": "Für Unternehmen, die online mehr erreichen wollen.",
       "features": ["Bis zu 5 Unterseiten", "Individuelles Design", "High-Speed Architektur", "Lokales SEO Basis-Setup", "3 Monate Support"],
       "ctaText": "Projekt starten",
       "ctaLink": "/kontakt",
@@ -49,7 +50,7 @@
     {
       "name": "Premium",
       "price": "2.990€",
-      "description": "Das Rundum-Sorglos-Paket.",
+      "description": "Rundum sorglos, mit allem, was Sie brauchen.",
       "features": ["Unbegrenzte Seiten (CMS)", "Individuelles Design + Logo", "Erweitertes SEO & Analytics", "Terminbuchungssystem", "12 Monate Support"],
       "ctaText": "Anfragen",
       "ctaLink": "/kontakt"
@@ -57,11 +58,12 @@
   ],
   "disclaimer": {
     "label": "Gut zu wissen:",
-    "text": "Jedes Unternehmen ist einzigartig, und genauso individuell sind auch meine Websites. Die oben genannten Pakete dienen zur ersten Orientierung. Gerne können wir Funktionen weglassen oder hinzufügen. Nach unserem kostenlosen Erstgespräch erstelle ich Ihnen ein individuelles Festpreis-Angebot, das exakt auf Ihre Wünsche zugeschnitten ist."
+    "text": "Kein Unternehmen ist wie das andere, und genauso wenig sind es meine Websites. Die Pakete oben sind eine erste Orientierung, wir können jederzeit Funktionen weglassen oder ergänzen. Nach unserem kostenlosen Erstgespräch bekommen Sie ein Angebot, das wirklich zu Ihnen passt, zum Festpreis.",
+    "textMobile": "Die Pakete oben sind eine erste Orientierung. Nach unserem kostenlosen Erstgespräch bekommen Sie ein individuelles Festpreis-Angebot, das zu Ihnen passt."
   },
   "cta": {
     "headline": "Noch unsicher, welches Paket das richtige ist?",
-    "description": "Lassen Sie uns ganz unverbindlich über Ihr Projekt und Ihre Ziele sprechen.",
+    "description": "Kein Problem, lassen Sie uns einfach unverbindlich darüber sprechen.",
     "buttonText": "Kostenloses Erstgespräch buchen",
     "buttonLink": "/kontakt"
   }

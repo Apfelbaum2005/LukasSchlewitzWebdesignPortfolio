@@ -35,6 +35,7 @@ const iconMap = {
             titleStart={leistungenHeader.titleStart}
             titleHighlight={leistungenHeader.titleHighlight}
             subtitle={leistungenHeader.subtitle}
+            subtitleMobile={leistungenHeader.subtitleMobile}
         />
 
         <CardsGrid
@@ -108,7 +109,14 @@ const iconMap = {
                     <div class="icon-wrapper">
                         <Info />
                     </div>
-                    <p><strong>{pricingDisclaimer.label}</strong> {pricingDisclaimer.text}</p>
+                    {pricingDisclaimer.textMobile ? (
+                        <>
+                            <p class="desktop-only"><strong>{pricingDisclaimer.label}</strong> {pricingDisclaimer.text}</p>
+                            <p class="mobile-only"><strong>{pricingDisclaimer.label}</strong> {pricingDisclaimer.textMobile}</p>
+                        </>
+                    ) : (
+                        <p><strong>{pricingDisclaimer.label}</strong> {pricingDisclaimer.text}</p>
+                    )}
                 </div>
             </div>
         </section>
@@ -320,10 +328,49 @@ const iconMap = {
     }
 
     @media (max-width: 768px) {
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-section {
+            padding: 3rem 0;
+        }
+
         .timeline::before { left: 16px; }
-        .timeline-item { padding-left: 48px; }
+        .timeline-item { padding-left: 48px; margin-bottom: 2rem; }
         .timeline-dot { width: 32px; height: 32px; font-size: 0.9rem; }
+
+        .pricing-section {
+            padding: 3rem 0 2rem;
+        }
+
+        /* Swipeable row instead of three stacked cards */
+        .pricing-grid {
+            display: flex;
+            grid-template-columns: none;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            gap: 1rem;
+            padding-bottom: 0.5rem;
+            scrollbar-width: none;
+        }
+        .pricing-grid::-webkit-scrollbar {
+            display: none;
+        }
+        .pricing-card {
+            flex: 0 0 82%;
+            min-width: 82%;
+            scroll-snap-align: center;
+            padding: 1.75rem;
+        }
+
         .pricing-card.highlighted { transform: scale(1); }
+
+        .disclaimer-section {
+            padding: 1rem 0 3rem;
+        }
 
         .disclaimer-card {
             flex-direction: column;

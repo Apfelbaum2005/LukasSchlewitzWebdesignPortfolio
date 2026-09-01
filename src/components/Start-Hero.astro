@@ -4,17 +4,19 @@ export interface Props {
     headlineHighlight: string;
     headlineEnd: string;
     subtitle: string;
+    subtitleMobile?: string;
     buttonText: string;
     buttonLink: string;
 }
 
-const { 
-    headlineStart, 
-    headlineHighlight, 
-    headlineEnd, 
-    subtitle, 
-    buttonText, 
-    buttonLink 
+const {
+    headlineStart,
+    headlineHighlight,
+    headlineEnd,
+    subtitle,
+    subtitleMobile,
+    buttonText,
+    buttonLink
 } = Astro.props;
 ---
 
@@ -22,11 +24,18 @@ const {
     <div class="container container--narrow">
 
         <h1>{headlineStart} <br/> <span class="text-gradient">{headlineHighlight}</span> <br/> {headlineEnd}</h1>
-        
-        <p class="subtitle">{subtitle}</p>
-        
+
+        {subtitleMobile ? (
+            <>
+                <p class="subtitle desktop-only">{subtitle}</p>
+                <p class="subtitle mobile-only">{subtitleMobile}</p>
+            </>
+        ) : (
+            <p class="subtitle">{subtitle}</p>
+        )}
+
         <a href={buttonLink} class="glow-button">{buttonText}</a>
-        
+
     </div>
 </section>
 

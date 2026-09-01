@@ -33,6 +33,7 @@ export interface PageHeader {
   titleHighlight: string;
   titleEnd?: string;
   subtitle: string;
+  subtitleMobile?: string;
 }
 
 // --- Homepage ---
@@ -42,6 +43,7 @@ export interface HeroContent {
   headlineHighlight: string;
   headlineEnd: string;
   subtitle: string;
+  subtitleMobile?: string;
   buttonText: string;
   buttonLink: string;
 }
@@ -65,6 +67,7 @@ export interface AboutWorkContent {
   aboutHeadline: string;
   aboutText1: string;
   aboutText2: string;
+  aboutMobileText: string;
   workTagline: string;
   workHeadline: string;
   demoProject: DemoProject;
@@ -117,6 +120,7 @@ export const impressumContent = impressumData;
 
 export const ueberMichHeader: PageHeader = ueberMichData.header;
 export const ueberMichIntroParagraphs: string[] = ueberMichData.introParagraphs;
+export const ueberMichIntroTextMobile: string = ueberMichData.introTextMobile;
 export const ueberMichWhy = ueberMichData.why;
 export const ueberMichDifferentiators: CardItem[] = ueberMichData.differentiators;
 export const ueberMichCta: CtaContent = ueberMichData.cta;

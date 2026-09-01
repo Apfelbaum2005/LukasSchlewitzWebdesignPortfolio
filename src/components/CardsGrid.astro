@@ -178,18 +178,37 @@ const useArrows = isScrollMode && scrollType === 'arrows';
   .scroll-btn.next { right: -1.5rem; }
 
   @media (max-width: 768px) {
+    .problems-section {
+      padding: 3rem 0;
+    }
     h2 {
       font-size: 1.75rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
-    .scroll-btn {
+
+    /* Swipeable row instead of a long vertical stack - applies regardless of the
+       wrap prop, since a long stack is exactly what we want to avoid on mobile. */
+    .cards-grid {
+      display: flex;
+      grid-template-columns: none;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 1rem;
+      padding-bottom: 0.5rem;
+      scrollbar-width: none;
+    }
+    .cards-grid::-webkit-scrollbar {
       display: none;
     }
-    .cards-grid.hide-scrollbar {
-      scrollbar-width: auto;
+    .cards-grid > :global(*) {
+      flex: 0 0 82%;
+      min-width: 82%;
+      scroll-snap-align: center;
     }
-    .cards-grid.hide-scrollbar::-webkit-scrollbar {
-      display: block;
+
+    .scroll-btn {
+      display: none;
     }
   }
 </style>

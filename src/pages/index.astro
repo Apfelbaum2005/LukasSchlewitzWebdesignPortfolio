@@ -33,6 +33,7 @@ const iconMap = {
             headlineHighlight={homeHero.headlineHighlight}
             headlineEnd={homeHero.headlineEnd}
             subtitle={homeHero.subtitle}
+            subtitleMobile={homeHero.subtitleMobile}
             buttonText={homeHero.buttonText}
             buttonLink={homeHero.buttonLink}
         />
@@ -84,6 +85,7 @@ const iconMap = {
             aboutHeadline={homeAboutWork.aboutHeadline}
             aboutText1={homeAboutWork.aboutText1}
             aboutText2={homeAboutWork.aboutText2}
+            aboutMobileText={homeAboutWork.aboutMobileText}
             workTagline={homeAboutWork.workTagline}
             workHeadline={homeAboutWork.workHeadline}
             demoProject={homeAboutWork.demoProject}
@@ -122,5 +124,11 @@ const iconMap = {
         margin-top: 2rem;
         position: relative;
         z-index: 10;
+    }
+
+    @media (max-width: 768px) {
+        .solutions-wrapper {
+            padding-bottom: 3rem;
+        }
     }
 </style>
