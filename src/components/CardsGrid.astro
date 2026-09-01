@@ -192,8 +192,14 @@ const useArrows = isScrollMode && scrollType === 'arrows';
       display: flex;
       grid-template-columns: none;
       overflow-x: auto;
-      scroll-snap-type: x mandatory;
+      /* "proximity" (not "mandatory") so the browser doesn't grab every touch drag
+         here as strictly horizontal - mandatory snapping is known to fight iOS
+         Safari's own vertical-scroll detection and can trap the gesture. */
+      scroll-snap-type: x proximity;
       -webkit-overflow-scrolling: touch;
+      /* Let a vertical swipe pass through to the page instead of getting caught here;
+         only a clearly horizontal swipe scrolls the carousel. */
+      touch-action: pan-x;
       gap: 1rem;
       padding-bottom: 0.5rem;
       scrollbar-width: none;
@@ -205,6 +211,15 @@ const useArrows = isScrollMode && scrollType === 'arrows';
       flex: 0 0 82%;
       min-width: 82%;
       scroll-snap-align: center;
+    }
+
+    /* All cards should be visible together as soon as the carousel scrolls into
+       view - a per-card staggered fade would leave the "next card" peek invisible
+       for a moment, which breaks the visual hint that there's more to swipe to. */
+    .cards-grid > :global(.reveal) {
+      opacity: 1 !important;
+      transform: none !important;
+      transition-delay: 0s !important;
     }
 
     .scroll-btn {

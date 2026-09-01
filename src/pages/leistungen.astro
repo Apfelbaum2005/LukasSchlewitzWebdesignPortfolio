@@ -130,6 +130,18 @@ const iconMap = {
     </main>
 </BaseLayout>
 
+<script>
+    // On the mobile card carousel, start scrolled to the recommended ("Pro") package
+    // instead of the first one, so it's the first thing visitors see. No-op on desktop,
+    // where the pricing grid isn't scrollable in the first place.
+    const pricingGrid = document.querySelector<HTMLElement>('.pricing-grid');
+    const highlighted = pricingGrid?.querySelector<HTMLElement>('.pricing-card.highlighted');
+
+    if (pricingGrid && highlighted && pricingGrid.scrollWidth > pricingGrid.clientWidth) {
+        pricingGrid.scrollLeft = highlighted.offsetLeft - (pricingGrid.clientWidth - highlighted.offsetWidth) / 2;
+    }
+</script>
+
 <style>
     .section-title {
         font-size: 2.25rem;
@@ -350,8 +362,14 @@ const iconMap = {
             display: flex;
             grid-template-columns: none;
             overflow-x: auto;
-            scroll-snap-type: x mandatory;
+            /* "proximity" (not "mandatory") so the browser doesn't grab every touch drag
+               here as strictly horizontal - mandatory snapping is known to fight iOS
+               Safari's own vertical-scroll detection and can trap the gesture. */
+            scroll-snap-type: x proximity;
             -webkit-overflow-scrolling: touch;
+            /* Let a vertical swipe pass through to the page instead of getting caught
+               here; only a clearly horizontal swipe scrolls the carousel. */
+            touch-action: pan-x;
             gap: 1rem;
             padding-bottom: 0.5rem;
             scrollbar-width: none;
@@ -367,6 +385,14 @@ const iconMap = {
         }
 
         .pricing-card.highlighted { transform: scale(1); }
+
+        /* All three packages should be visible together as soon as the carousel
+           scrolls into view - see CardsGrid.astro for why. */
+        .pricing-card.reveal {
+            opacity: 1 !important;
+            transform: scale(1) !important;
+            transition-delay: 0s !important;
+        }
 
         .disclaimer-section {
             padding: 1rem 0 3rem;
