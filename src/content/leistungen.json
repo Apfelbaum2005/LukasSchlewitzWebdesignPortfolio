@@ -31,17 +31,17 @@
   "pricingPackages": [
     {
       "name": "Starter",
-      "price": "990€",
+      "price": "890€",
       "description": "Ihre digitale Visitenkarte, schlicht und schnell online.",
-      "features": ["One-Pager Website", "Template-basiertes Design", "Basis Performance-Setup", "1 Monat Support"],
+      "features": ["Projektmanagement & Kommunikation", "Technisches Kick-off & Setup", "UI-Design: Startseite", "Asset-Optimierung", "Entwicklung: Startseite", "On-Page SEO", "Rechtstexte-Integration", "Server-Setup"],
       "ctaText": "Anfragen",
       "ctaLink": "/kontakt"
     },
     {
       "name": "Pro",
-      "price": "1.890€",
+      "price": "1.590€",
       "description": "Für Unternehmen, die online mehr erreichen wollen.",
-      "features": ["Bis zu 5 Unterseiten", "Individuelles Design", "High-Speed Architektur", "Lokales SEO Basis-Setup", "3 Monate Support"],
+      "features": ["Alles aus dem Starter-Paket, außerdem:", "Design & Entwicklung bis zu 4 Unterseiten", "Design-Revision (1 Schleife)", "Erweitertes On-Page SEO für alle Unterseiten", "Kontaktformular Setup", "Cookie-Consent-Management"],
       "ctaText": "Projekt starten",
       "ctaLink": "/kontakt",
       "highlighted": true,
@@ -49,9 +49,9 @@
     },
     {
       "name": "Premium",
-      "price": "2.990€",
+      "price": "2.490€",
       "description": "Rundum sorglos, mit allem, was Sie brauchen.",
-      "features": ["Unbegrenzte Seiten (CMS)", "Individuelles Design + Logo", "Erweitertes SEO & Analytics", "Terminbuchungssystem", "12 Monate Support"],
+      "features": ["Alles aus dem Pro-Paket, außerdem:", "Unbegrenzte Unterseiten (dynamisch)", "CMS-Anbindung (Basis)", "Integration Terminbuchung", "Design-Revision (2 Schleifen)"],
       "ctaText": "Anfragen",
       "ctaLink": "/kontakt"
     }
