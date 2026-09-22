@@ -108,6 +108,7 @@ collections:
                 fields:
                   - { label: "Titel", name: title, widget: string }
                   - { label: "Beschreibung", name: description, widget: text }
+                  - { label: "Vorschaubild", name: image, widget: image, required: false, hint: "Screenshot der Demo-Website. Leer lassen, um stattdessen den Platzhalter-Rahmen anzuzeigen." }
                   - { label: "Bild-Alt-Text", name: imageAlt, widget: string }
                   - { label: "Button-Text", name: buttonText, widget: string }
                   - { label: "Link", name: link, widget: string }

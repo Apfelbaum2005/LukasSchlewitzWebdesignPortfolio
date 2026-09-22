@@ -65,6 +65,7 @@
     "demoProject": {
       "title": "Demo-Website: Schmidbauer Innenausbau",
       "description": "Eine voll funktionsfähige Beispiel-Website für einen Handwerksbetrieb, inklusive Terminbuchung und Preisübersicht, die auch auf dem Handy richtig gut aussieht, und läuft.",
+      "image": "/images/demo-preview.jpg",
       "imageAlt": "Vorschau der Demo-Website für Schmidbauer Innenausbau",
       "buttonText": "Demo-Projekt ansehen",
       "link": "https://demo.lukasschlewitz.de",

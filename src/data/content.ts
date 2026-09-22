@@ -56,6 +56,7 @@ export interface SolutionsIntro extends SectionIntro {
 export interface DemoProject {
   title: string;
   description: string;
+  image?: string;
   imageAlt: string;
   buttonText: string;
   link: string;
