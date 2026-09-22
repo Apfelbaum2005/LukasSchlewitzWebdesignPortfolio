@@ -17,8 +17,8 @@ export const CONTACT_ADDRESS = `${BUSINESS_ADDRESS.name}<br/>${BUSINESS_ADDRESS.
 
 export const SERVICE_AREAS = settings.serviceAreas;
 
-// Cal.com booking widget (EU-hosted instance), used for the inline embed on the Kontakt page
-export const CAL_ORIGIN = 'https://app.cal.eu';
-export const CAL_EMBED_JS = 'https://app.cal.eu/embed/embed.js';
+// Cal.com booking widget, used for the inline embed on the Kontakt page
+export const CAL_ORIGIN = 'https://app.cal.com';
+export const CAL_EMBED_JS = 'https://app.cal.com/embed/embed.js';
 export const CAL_NAMESPACE = 'erstgespraech';
 export const CAL_LINK = 'lukasschlewitzwebdesign/erstgespraech';
